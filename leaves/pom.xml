@@ -1,0 +1,123 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.github.ryanddu</groupId>
+  <artifactId>leaves</artifactId>
+  <packaging>pom</packaging>
+  <version>{revision}</version>
+  <modules>
+    <module>leaves-base</module>
+    <module>leaves-common</module>
+    <module>leaves-starters</module>
+    <module>leaves-base/leaves-base-biz</module>
+    <module>leaves-base/leaves-base-web</module>
+    <module>leaves-base/leaves-base-core</module>
+    <module>leaves-base/leaves-base-api</module>
+  </modules>
+
+  <name>leaves</name>
+  <description>项目基本脚手架</description>
+  <url>https://github.com/ryanddu/leaves</url>
+
+  <developers>
+    <developer>
+      <name>ryan</name>
+      <email>ryanddu@163.com</email>
+    </developer>
+  </developers>
+
+  <scm>
+    <url>https://github.com/ryanddu/leaves</url>
+    <connection>https://github.com/ryanddu/leaves.git</connection>
+    <developerConnection>https://github.com/ryanddu</developerConnection>
+  </scm>
+
+  <licenses>
+    <license>
+      <name>MIT License</name>
+      <url>http://www.opensource.org/licenses/mit-license.php</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <properties>
+    <revision>0.0.1-SNAPSHOT</revision>
+    <java.version>1.8</java.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <maven-compiler-plugin.verison>3.8.0</maven-compiler-plugin.verison>
+    <spring-boot.version>2.4.3</spring-boot.version>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+
+    </dependencies>
+  </dependencyManagement>
+
+  <build>
+    <finalName>${project.name}-${project.version}</finalName>
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <filtering>true</filtering>
+      </resource>
+    </resources>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-maven-plugin</artifactId>
+          <version>${spring-boot.version}</version>
+          <executions>
+            <execution>
+              <goals>
+                <goal>repackage</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>${maven-compiler-plugin.verison}</version>
+        <configuration>
+          <target>${maven.compiler.target}</target>
+          <source>${maven.compiler.source}</source>
+          <encoding>${project.build.sourceEncoding}</encoding>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <!--环境变量-->
+  <profiles>
+    <profile>
+      <id>dev</id>
+      <properties>
+        <profiles.active>dev</profiles.active>
+      </properties>
+      <activation>
+        <!-- 默认环境 -->
+        <activeByDefault>true</activeByDefault>
+      </activation>
+    </profile>
+    <profile>
+      <id>test</id>
+      <properties>
+        <profiles.active>test</profiles.active>
+      </properties>
+    </profile>
+    <profile>
+      <id>prod</id>
+      <properties>
+        <profiles.active>prod</profiles.active>
+      </properties>
+    </profile>
+  </profiles>
+
+</project>
