@@ -49,14 +49,75 @@
     <maven.compiler.target>1.8</maven.compiler.target>
     <maven-compiler-plugin.verison>3.8.0</maven-compiler-plugin.verison>
     <spring-boot.version>2.4.3</spring-boot.version>
+    <spring-cloud.version>Greenwich.SR4</spring-cloud.version>
+	<commons-lang3.version>3.12.0</commons-lang3.version>
+	<spring-core.version>5.3.20</spring-core.version>
+	<hutool-core.version>5.8.12</hutool-core.version>
   </properties>
 
   <dependencyManagement>
     <dependencies>
-
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-dependencies</artifactId>
+			<version>${spring-boot.version}</version>
+			<type>pom</type>
+			<scope>import</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-dependencies</artifactId>
+			<version>${spring-cloud.version}</version>
+			<type>pom</type>
+			<scope>import</scope>
+		</dependency>
+		<dependency>
+			<groupId>cn.hutool</groupId>
+			<artifactId>hutool-core</artifactId>
+			<version>${hutool-core.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.github.ryanddu</groupId>
+			<artifactId>leaves-base-core</artifactId>
+			<version>{revision}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.github.ryanddu</groupId>
+			<artifactId>leaves-base-api</artifactId>
+			<version>{revision}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.github.ryanddu</groupId>
+			<artifactId>leaves-base-biz</artifactId>
+			<version>{revision}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.github.ryanddu</groupId>
+			<artifactId>leaves-base-web</artifactId>
+			<version>{revision}</version>
+		</dependency>
     </dependencies>
   </dependencyManagement>
-
+	<dependencies>
+	<!--配置文件处理器-->
+	<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-configuration-processor</artifactId>
+		<optional>true</optional>
+	</dependency>
+	<!--Lombok-->
+	<dependency>
+		<groupId>org.projectlombok</groupId>
+		<artifactId>lombok</artifactId>
+		<scope>provided</scope>
+	</dependency>
+	<!--测试依赖-->
+	<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-test</artifactId>
+		<scope>test</scope>
+	</dependency>
+  </dependencies>
   <build>
     <finalName>${project.name}-${project.version}</finalName>
     <resources>
