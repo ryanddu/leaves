@@ -1,44 +1,42 @@
 package com.github.ryanddu.constant.enums;
 
 /**
- * 锁定状态
- *
- * @author lm
- */
-public enum Whether{
+ * 全局通用是否状态枚举
+ * @author: ryan
+ * @date: 2023/3/24 17:43
+ **/
+public enum Whether implements BaseEnum<Integer> {
 
     YES(1, "是"),
     NO(0, "否");
 
-    private int code;
+    private final int value;
 
-    private String msg;
+    private final String desc;
 
-	Whether(int code, String msg) {
-        this.code = code;
-        this.msg = msg;
+	Whether(int value, String desc) {
+        this.value = value;
+        this.desc = desc;
     }
+	@Override
+	public Integer getValue() {
+		return this.value;
+	}
 
-    public int getCode() {
-        return this.code;
-    }
+	@Override
+	public String getDesc() {
+		return this.desc;
+	}
 
-    public String getMsg() {
-        return this.msg;
-    }
-
-    public static Whether fromCode(Integer code) {
-        if (code == null) {
-            return null;
-        }
-        switch (code) {
-            case 0:
-                return NO;
-            case 1:
-                return YES;
-            default:
-                return null;
-        }
-    }
-
+	public static Whether fromCode(Integer value) {
+		if (value == null) {
+			return null;
+		}
+		for (Whether whether:Whether.values()){
+			if (whether.getValue().equals(value)){
+				return whether;
+			}
+		}
+		return null;
+	}
 }

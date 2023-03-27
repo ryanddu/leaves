@@ -8,8 +8,9 @@ import java.util.function.Supplier;
 
 /**
  * 断言工具
- * @author chenhuainian
- */
+ * @author: ryan
+ * @date: 2023/3/27 9:42
+ **/
 public class AssertUtils {
     /**
      *  断言对象不为空

@@ -4,8 +4,9 @@ import cn.hutool.core.util.StrUtil;
 
 /**
  * 脱敏工具类
- * @author chenhuainian
- */
+ * @author: ryan
+ * @date: 2023/3/27 9:44
+ **/
 public class DesensitizedUtils {
 
 	/**

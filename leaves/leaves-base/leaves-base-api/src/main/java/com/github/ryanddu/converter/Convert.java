@@ -5,8 +5,9 @@ import com.github.ryanddu.utils.BeanUtils;
 
 /**
  * 让Entity具有数据复制功能
- * @author chenhuainian
- */
+ * @author: ryan
+ * @date: 2023/3/27 9:48
+ **/
 public interface Convert {
 
 	/**

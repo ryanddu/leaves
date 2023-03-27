@@ -9,4 +9,10 @@
 
     <artifactId>leaves-base-biz</artifactId>
     <packaging>jar</packaging>
+	<dependencies>
+		<dependency>
+			<groupId>com.github.ryanddu</groupId>
+			<artifactId>leaves-base-web</artifactId>
+		</dependency>
+	</dependencies>
 </project>

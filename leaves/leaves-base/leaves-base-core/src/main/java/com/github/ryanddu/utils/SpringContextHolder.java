@@ -10,7 +10,9 @@ import org.springframework.stereotype.Service;
 
 /**
  * Spring 工具类
- */
+ * @author: ryan
+ * @date: 2023/3/27 9:44
+ **/
 @Slf4j
 @Service
 public class SpringContextHolder implements ApplicationContextAware, DisposableBean {

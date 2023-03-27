@@ -12,8 +12,9 @@ import java.util.*;
 
 /**
  * Jackson 工具类
- * @author chenhuainian
- */
+ * @author: ryan
+ * @date: 2023/3/27 9:44
+ **/
 public abstract class JacksonUtils {
 
 	private final static ObjectMapper objectMapper;

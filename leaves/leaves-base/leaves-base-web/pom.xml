@@ -10,4 +10,11 @@
     <artifactId>leaves-base-web</artifactId>
     <packaging>jar</packaging>
 
+	<dependencies>
+		<dependency>
+			<groupId>com.github.ryanddu</groupId>
+			<artifactId>leaves-base-api</artifactId>
+		</dependency>
+	</dependencies>
+
 </project>

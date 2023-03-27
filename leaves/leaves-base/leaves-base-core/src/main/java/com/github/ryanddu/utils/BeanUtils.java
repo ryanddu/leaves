@@ -26,8 +26,9 @@ import java.util.List;
 
 /**
  * Bean工具类
- * @author chenhuainian
- */
+ * @author: ryan
+ * @date: 2023/3/27 9:43
+ **/
 public class BeanUtils {
 
     /**
