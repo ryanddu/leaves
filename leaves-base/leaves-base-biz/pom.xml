@@ -14,5 +14,10 @@
 			<groupId>com.github.ryanddu</groupId>
 			<artifactId>leaves-base-web</artifactId>
 		</dependency>
+		<!--mybatis-->
+		<dependency>
+			<groupId>com.baomidou</groupId>
+			<artifactId>mybatis-plus-boot-starter</artifactId>
+		</dependency>
 	</dependencies>
 </project>
