@@ -5,16 +5,17 @@
         <groupId>com.github.ryanddu</groupId>
         <version>{revision}</version>
     </parent>
-    <modelVersion>4.0.0</modelVersion>
 
+    <modelVersion>4.0.0</modelVersion>
     <artifactId>leaves-base-biz</artifactId>
     <packaging>jar</packaging>
 	<dependencies>
+		<!--leaves-base-web-->
 		<dependency>
 			<groupId>com.github.ryanddu</groupId>
 			<artifactId>leaves-base-web</artifactId>
 		</dependency>
-		<!--mybatis-->
+		<!--mybatis-plus-->
 		<dependency>
 			<groupId>com.baomidou</groupId>
 			<artifactId>mybatis-plus-boot-starter</artifactId>

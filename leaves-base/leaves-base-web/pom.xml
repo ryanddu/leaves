@@ -11,10 +11,12 @@
     <packaging>jar</packaging>
 
 	<dependencies>
+		<!--leaves-base-api-->
 		<dependency>
 			<groupId>com.github.ryanddu</groupId>
 			<artifactId>leaves-base-api</artifactId>
 		</dependency>
+		<!--web项目starter-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>

@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.github.ryanddu</groupId>
+	<artifactId>leaves-dependencies</artifactId>
+	<version>{revision}</version>
+	<packaging>pom</packaging>
+
+	<name>leaves-dependencies</name>
+	<url>https://github.com/ryanddu/leaves</url>
+	<description>Leaves Dependencies</description>
+
+	<developers>
+		<developer>
+			<name>ryan</name>
+			<email>ryanddu@163.com</email>
+		</developer>
+	</developers>
+
+	<scm>
+		<url>https://github.com/ryanddu/leaves</url>
+		<connection>https://github.com/ryanddu/leaves.git</connection>
+		<developerConnection>https://github.com/ryanddu</developerConnection>
+	</scm>
+
+	<licenses>
+		<license>
+			<name>MIT License</name>
+			<url>http://www.opensource.org/licenses/mit-license.php</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<properties>
+		<revision>0.0.1-SNAPSHOT</revision>
+
+		<!-- 插件版本 -->
+		<flatten-maven-plugin.version>1.3.0</flatten-maven-plugin.version>
+		<maven-compiler-plugin.verison>3.10.1</maven-compiler-plugin.verison>
+		<maven-gpg-plugin.version>1.6</maven-gpg-plugin.version>
+		<maven-resources-plugin.version>3.3.0</maven-resources-plugin.version>
+		<maven-release-plugin.version>3.0.0-M5</maven-release-plugin.version>
+		<maven-javadoc-plugin.version>3.4.1</maven-javadoc-plugin.version>
+		<maven-source-plugin.version>3.2.1</maven-source-plugin.version>
+		<maven-surefire-plugin.version>3.0.0-M7</maven-surefire-plugin.version>
+		<nexus-staging-maven-plugin.version>1.6.13</nexus-staging-maven-plugin.version>
+		<spring-javaformat-checkstyle.version>0.0.38</spring-javaformat-checkstyle.version>
+
+		<!--依赖版本-->
+		<spring-boot.version>2.7.10</spring-boot.version>
+		<spring-cloud.version>Greenwich.SR4</spring-cloud.version>
+		<commons-lang3.version>3.12.0</commons-lang3.version>
+		<spring-core.version>5.3.20</spring-core.version>
+		<hutool.version>5.8.12</hutool.version>
+		<mybatis-plus.version>3.5.3.1</mybatis-plus.version>
+		<knife4j-openapi3.version>4.0.0</knife4j-openapi3.version>
+		<fastjson.version>2.0.23</fastjson.version>
+		<lombok.version>1.18.24</lombok.version>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<!-- ==================== 第三方 bom 导入 ================== -->
+			<!-- 注意 bom 导入有优先级顺序，写在前面的优先级高 -->
+			<!-- spring boot 依赖管理 -->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>${spring-boot.version}</version>
+				<scope>import</scope>
+				<type>pom</type>
+			</dependency>
+			<!-- spring-cloud 依赖管理 -->
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring-cloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<!-- hutool工具类 -->
+			<dependency>
+				<groupId>cn.hutool</groupId>
+				<artifactId>hutool-bom</artifactId>
+				<version>${hutool.version}</version>
+				<scope>import</scope>
+				<type>pom</type>
+			</dependency>
+
+			<!-- ======================= 第三方依赖 ===================== -->
+			<!-- fastjson -->
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>fastjson</artifactId>
+				<version>${fastjson.version}</version>
+				<optional>true</optional>
+			</dependency>
+			<!--mybatis-plus-->
+			<dependency>
+				<groupId>com.baomidou</groupId>
+				<artifactId>mybatis-plus-annotation</artifactId>
+				<version>${mybatis-plus.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.baomidou</groupId>
+				<artifactId>mybatis-plus-boot-starter</artifactId>
+				<version>${mybatis-plus.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.baomidou</groupId>
+				<artifactId>mybatis-plus-core</artifactId>
+				<version>${mybatis-plus.version}</version>
+			</dependency>
+			<!--mybatis plus extension,包含了mybatis plus core-->
+			<dependency>
+				<groupId>com.baomidou</groupId>
+				<artifactId>mybatis-plus-extension</artifactId>
+				<version>${mybatis-plus.version}</version>
+			</dependency>
+			<!--knife4j-openapi3-->
+			<dependency>
+				<groupId>com.github.xiaoymin</groupId>
+				<artifactId>knife4j-openapi3-spring-boot-starter</artifactId>
+				<version>${knife4j-openapi3.version}</version>
+			</dependency>
+			<!-- lombok 代码简化处理器 -->
+			<dependency>
+				<groupId>org.projectlombok</groupId>
+				<artifactId>lombok</artifactId>
+				<version>${lombok.version}</version>
+			</dependency>
+
+			<!--region ============= 定义leaves 自身模块版本 ================== -->
+			<dependency>
+				<groupId>com.github.ryanddu</groupId>
+				<artifactId>leaves-base-core</artifactId>
+				<version>{revision}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.github.ryanddu</groupId>
+				<artifactId>leaves-base-api</artifactId>
+				<version>{revision}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.github.ryanddu</groupId>
+				<artifactId>leaves-base-biz</artifactId>
+				<version>{revision}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.github.ryanddu</groupId>
+				<artifactId>leaves-base-web</artifactId>
+				<version>{revision}</version>
+			</dependency>
+			<!--endregion ============= 结束定义leaves 自身模块版本 =========== -->
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>io.spring.javaformat</groupId>
+				<artifactId>spring-javaformat-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>validate</goal>
+						</goals>
+						<inherited>true</inherited>
+						<phase>validate</phase>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>flatten-maven-plugin</artifactId>
+				<configuration>
+					<flattenMode>resolveCiFriendliesOnly</flattenMode>
+					<updatePomFile>true</updatePomFile>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>flatten</goal>
+						</goals>
+						<id>flatten</id>
+						<phase>process-resources</phase>
+					</execution>
+					<execution>
+						<goals>
+							<goal>clean</goal>
+						</goals>
+						<id>flatten.clean</id>
+						<phase>clean</phase>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>io.spring.javaformat</groupId>
+					<artifactId>spring-javaformat-maven-plugin</artifactId>
+					<version>${spring-javaformat-checkstyle.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>${maven-compiler-plugin.verison}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-gpg-plugin</artifactId>
+					<version>${maven-gpg-plugin.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-javadoc-plugin</artifactId>
+					<version>${maven-javadoc-plugin.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-release-plugin</artifactId>
+					<version>${maven-release-plugin.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-resources-plugin</artifactId>
+					<version>${maven-resources-plugin.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-source-plugin</artifactId>
+					<version>${maven-source-plugin.version}</version>
+				</plugin>
+				<!-- 测试插件 -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>${maven-surefire-plugin.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.sonatype.plugins</groupId>
+					<artifactId>nexus-staging-maven-plugin</artifactId>
+					<version>${nexus-staging-maven-plugin.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>flatten-maven-plugin</artifactId>
+					<version>${flatten-maven-plugin.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-maven-plugin</artifactId>
+					<version>${spring-boot.version}</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+
+	<!--region 环境变量-->
+	<profiles>
+		<profile>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-gpg-plugin</artifactId>
+						<version>${maven-gpg-plugin.version}</version>
+						<executions>
+							<execution>
+								<goals>
+									<goal>sign</goal>
+								</goals>
+								<id>sign-artifacts</id>
+								<phase>verify</phase>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-release-plugin</artifactId>
+						<version>${maven-release-plugin.version}</version>
+						<configuration>
+							<autoVersionSubmodules>true</autoVersionSubmodules>
+							<goals>deploy</goals>
+							<releaseProfiles>release</releaseProfiles>
+							<useReleaseProfile>false</useReleaseProfile>
+						</configuration>
+					</plugin>
+					<plugin>
+						<groupId>org.sonatype.plugins</groupId>
+						<artifactId>nexus-staging-maven-plugin</artifactId>
+						<version>${nexus-staging-maven-plugin.version}</version>
+						<configuration>
+							<nexusUrl>https://oss.sonatype.org/</nexusUrl>
+							<serverId>ossrh</serverId>
+						</configuration>
+						<extensions>true</extensions>
+					</plugin>
+				</plugins>
+			</build>
+			<id>ossrh</id>
+		</profile>
+	</profiles>
+	<!--endregion 结束环境变量-->
+	<distributionManagement>
+		<repository>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+			<id>ossrh</id>
+		</repository>
+		<snapshotRepository>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+			<id>ossrh</id>
+		</snapshotRepository>
+	</distributionManagement>
+</project>
