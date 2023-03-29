@@ -1,6 +1,5 @@
 package com.github.ryanddu.constant.enums;
 
-
 import com.baomidou.mybatisplus.annotation.IEnum;
 
 import java.io.Serializable;
