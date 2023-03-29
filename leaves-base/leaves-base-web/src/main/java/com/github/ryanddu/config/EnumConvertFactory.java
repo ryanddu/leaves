@@ -1,4 +1,4 @@
-package com.github.ryanddu.converter;
+package com.github.ryanddu.config;
 
 import com.baomidou.mybatisplus.core.enums.IEnum;
 import org.apache.commons.lang3.StringUtils;
