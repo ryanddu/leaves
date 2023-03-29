@@ -8,12 +8,13 @@ import java.util.List;
 
 /**
  * id列表传参基类
+ *
  * @author: ryan
  * @date: 2023/3/27 9:49
  **/
 @Data
 @Schema(description = "id列表")
-public class IdListReq<T> extends BaseRequest{
+public class IdListReq<T> extends BaseRequest {
 
 	private static final long serialVersionUID = -2682641171802291323L;
 
@@ -21,7 +22,7 @@ public class IdListReq<T> extends BaseRequest{
 	 * id列表
 	 */
 	@NotEmpty(message = "id列表不能为空")
-	@Schema(description = "id列表",required = true)
-    protected List<T> idList;
+	@Schema(description = "id列表", required = true)
+	protected List<T> idList;
 
 }

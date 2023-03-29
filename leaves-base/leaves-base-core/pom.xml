@@ -25,10 +25,21 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-json</artifactId>
 		</dependency>
-		<!--hutool-all hutool工具类-->
+		<!--hutool工具类-->
+		<!--hutool-core-->
 		<dependency>
 			<groupId>cn.hutool</groupId>
 			<artifactId>hutool-core</artifactId>
+		</dependency>
+		<!--hutool-extra-->
+		<dependency>
+			<groupId>cn.hutool</groupId>
+			<artifactId>hutool-extra</artifactId>
+		</dependency>
+		<!--hutool-json-->
+		<dependency>
+			<groupId>cn.hutool</groupId>
+			<artifactId>hutool-json</artifactId>
 		</dependency>
 		<!--fastjson 工具类-->
 		<dependency>

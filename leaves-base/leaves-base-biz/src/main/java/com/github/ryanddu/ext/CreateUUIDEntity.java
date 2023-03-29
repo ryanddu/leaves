@@ -8,6 +8,7 @@ import java.time.LocalDateTime;
 
 /**
  * 带创建字段UUID算法entity基类
+ *
  * @author: ryan
  * @date: 2023/3/27 20:52
  **/
@@ -17,7 +18,8 @@ public class CreateUUIDEntity extends SuperUUIDEntity {
 	public CreateUUIDEntity() {
 	}
 
-	public CreateUUIDEntity(String id) {super(id);
+	public CreateUUIDEntity(String id) {
+		super(id);
 	}
 
 	/**
@@ -32,10 +34,8 @@ public class CreateUUIDEntity extends SuperUUIDEntity {
 	@TableField(value = "create_by", fill = FieldFill.INSERT)
 	private String createBy;
 
-	public static final String GMT_CREATE="gmt_create";
+	public static final String GMT_CREATE = "gmt_create";
 
-	public static final String CREATE_BY="create_by";
-
-
+	public static final String CREATE_BY = "create_by";
 
 }

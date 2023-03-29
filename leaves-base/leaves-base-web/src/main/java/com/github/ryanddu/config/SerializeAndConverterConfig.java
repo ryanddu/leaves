@@ -29,6 +29,7 @@ import java.util.Date;
 
 /**
  * 序列化和属性转换配置
+ *
  * @author: ryan
  * @date: 2023/3/29 10:01
  **/
@@ -59,8 +60,6 @@ public class SerializeAndConverterConfig {
 	 * 默认时间格式 yyyy-MM
 	 */
 	public static final String DEFAULT_YYYY_MM_DD_HH_MM_FORMAT = "yyyy-MM-dd HH:mm";
-
-
 
 	/**
 	 * LocalDate转换器，用于转换RequestParam和PathVariable参数
@@ -106,20 +105,24 @@ public class SerializeAndConverterConfig {
 	 */
 	@Bean
 	public Converter<String, Date> dateConverter() {
-		return (source)-> {
+		return (source) -> {
 			if (StringUtils.isBlank(source)) {
 				return null;
 			}
 			source = source.trim();
-			if(source.matches("^\\d{4}-\\d{1,2}$")){
+			if (source.matches("^\\d{4}-\\d{1,2}$")) {
 				return parseDate(source, DEFAULT_YYYY_MM_FORMAT);
-			}else if(source.matches("^\\d{4}-\\d{1,2}-\\d{1,2}$")){
+			}
+			else if (source.matches("^\\d{4}-\\d{1,2}-\\d{1,2}$")) {
 				return parseDate(source, DEFAULT_DATE_FORMAT);
-			}else if(source.matches("^\\d{4}-\\d{1,2}-\\d{1,2} {1}\\d{1,2}:\\d{1,2}$")){
+			}
+			else if (source.matches("^\\d{4}-\\d{1,2}-\\d{1,2} {1}\\d{1,2}:\\d{1,2}$")) {
 				return parseDate(source, DEFAULT_YYYY_MM_DD_HH_MM_FORMAT);
-			}else if(source.matches("^\\d{4}-\\d{1,2}-\\d{1,2} {1}\\d{1,2}:\\d{1,2}:\\d{1,2}$")){
+			}
+			else if (source.matches("^\\d{4}-\\d{1,2}-\\d{1,2} {1}\\d{1,2}:\\d{1,2}:\\d{1,2}$")) {
 				return parseDate(source, DEFAULT_DATE_TIME_FORMAT);
-			}else {
+			}
+			else {
 				throw new IllegalArgumentException("Invalid false value '" + source + "'");
 			}
 		};
@@ -131,17 +134,17 @@ public class SerializeAndConverterConfig {
 	 * @param format String 格式
 	 * @return Date 日期
 	 */
-	private  Date parseDate(String dateStr, String format) {
+	private Date parseDate(String dateStr, String format) {
 		Date date;
 		try {
 			DateFormat dateFormat = new SimpleDateFormat(format);
 			date = dateFormat.parse(dateStr);
-		} catch (Exception e) {
+		}
+		catch (Exception e) {
 			throw new IllegalArgumentException(e.getLocalizedMessage());
 		}
 		return date;
 	}
-
 
 	/**
 	 * Json序列化和反序列化转换器，用于转换Post请求体中的json以及将我们的对象序列化为返回响应的json
@@ -152,19 +155,26 @@ public class SerializeAndConverterConfig {
 		objectMapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
 		objectMapper.disable(DeserializationFeature.ADJUST_DATES_TO_CONTEXT_TIME_ZONE);
 
-		//LocalDateTime系列序列化和反序列化模块，继承自jsr310，我们在这里修改了日期格式
+		// LocalDateTime系列序列化和反序列化模块，继承自jsr310，我们在这里修改了日期格式
 		JavaTimeModule javaTimeModule = new JavaTimeModule();
-		javaTimeModule.addSerializer(LocalDateTime.class, new LocalDateTimeSerializer(DateTimeFormatter.ofPattern(DEFAULT_DATE_TIME_FORMAT)));
-		javaTimeModule.addSerializer(LocalDate.class, new LocalDateSerializer(DateTimeFormatter.ofPattern(DEFAULT_DATE_FORMAT)));
-		javaTimeModule.addSerializer(LocalTime.class, new LocalTimeSerializer(DateTimeFormatter.ofPattern(DEFAULT_TIME_FORMAT)));
-		javaTimeModule.addDeserializer(LocalDateTime.class, new LocalDateTimeDeserializer(DateTimeFormatter.ofPattern(DEFAULT_DATE_TIME_FORMAT)));
-		javaTimeModule.addDeserializer(LocalDate.class, new LocalDateDeserializer(DateTimeFormatter.ofPattern(DEFAULT_DATE_FORMAT)));
-		javaTimeModule.addDeserializer(LocalTime.class, new LocalTimeDeserializer(DateTimeFormatter.ofPattern(DEFAULT_TIME_FORMAT)));
+		javaTimeModule.addSerializer(LocalDateTime.class,
+				new LocalDateTimeSerializer(DateTimeFormatter.ofPattern(DEFAULT_DATE_TIME_FORMAT)));
+		javaTimeModule.addSerializer(LocalDate.class,
+				new LocalDateSerializer(DateTimeFormatter.ofPattern(DEFAULT_DATE_FORMAT)));
+		javaTimeModule.addSerializer(LocalTime.class,
+				new LocalTimeSerializer(DateTimeFormatter.ofPattern(DEFAULT_TIME_FORMAT)));
+		javaTimeModule.addDeserializer(LocalDateTime.class,
+				new LocalDateTimeDeserializer(DateTimeFormatter.ofPattern(DEFAULT_DATE_TIME_FORMAT)));
+		javaTimeModule.addDeserializer(LocalDate.class,
+				new LocalDateDeserializer(DateTimeFormatter.ofPattern(DEFAULT_DATE_FORMAT)));
+		javaTimeModule.addDeserializer(LocalTime.class,
+				new LocalTimeDeserializer(DateTimeFormatter.ofPattern(DEFAULT_TIME_FORMAT)));
 
-		//Date序列化和反序列化
+		// Date序列化和反序列化
 		javaTimeModule.addSerializer(Date.class, new JsonSerializer<Date>() {
 			@Override
-			public void serialize(Date date, JsonGenerator jsonGenerator, SerializerProvider serializerProvider) throws IOException {
+			public void serialize(Date date, JsonGenerator jsonGenerator, SerializerProvider serializerProvider)
+					throws IOException {
 				SimpleDateFormat formatter = new SimpleDateFormat(DEFAULT_DATE_TIME_FORMAT);
 				String formattedDate = formatter.format(date);
 				jsonGenerator.writeString(formattedDate);
@@ -172,12 +182,14 @@ public class SerializeAndConverterConfig {
 		});
 		javaTimeModule.addDeserializer(Date.class, new JsonDeserializer<Date>() {
 			@Override
-			public Date deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws IOException, JsonProcessingException {
+			public Date deserialize(JsonParser jsonParser, DeserializationContext deserializationContext)
+					throws IOException, JsonProcessingException {
 				SimpleDateFormat format = new SimpleDateFormat(DEFAULT_DATE_TIME_FORMAT);
 				String date = jsonParser.getText();
 				try {
 					return format.parse(date);
-				} catch (ParseException e) {
+				}
+				catch (ParseException e) {
 					throw new RuntimeException(e);
 				}
 			}
@@ -189,4 +201,5 @@ public class SerializeAndConverterConfig {
 		objectMapper.registerModule(javaTimeModule);
 		return objectMapper;
 	}
+
 }

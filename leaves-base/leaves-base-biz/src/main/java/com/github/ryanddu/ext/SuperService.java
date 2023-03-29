@@ -16,6 +16,7 @@ import java.util.List;
 
 /**
  * 通用service
+ *
  * @author: ryan
  * @date: 2023/3/27 21:00
  **/
@@ -27,8 +28,8 @@ public interface SuperService<T extends SuperEntity> extends IService<T> {
 	 * @return
 	 */
 	default boolean save(BaseRequest request) {
-		return save(request.convert(
-				(Class<T>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[1]));
+		return save(request
+			.convert((Class<T>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[1]));
 	}
 
 	/**
@@ -37,8 +38,8 @@ public interface SuperService<T extends SuperEntity> extends IService<T> {
 	 * @param request
 	 */
 	default boolean updateById(Long id, BaseRequest request) {
-		T entity = request.convert(
-				(Class<T>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[1]);
+		T entity = request
+			.convert((Class<T>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[1]);
 		entity.setId(id);
 		return updateById(entity);
 	}
@@ -49,8 +50,8 @@ public interface SuperService<T extends SuperEntity> extends IService<T> {
 	 * @param request
 	 */
 	default boolean updateById(String id, BaseRequest request) {
-		T entity = request.convert(
-				(Class<T>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[1]);
+		T entity = request
+			.convert((Class<T>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[1]);
 		entity.setId(id);
 		return updateById(entity);
 	}
@@ -99,7 +100,7 @@ public interface SuperService<T extends SuperEntity> extends IService<T> {
 	 * @return
 	 */
 	default <R> PageData<R> pageWithConvert(PageRequest pageRequest, Wrapper<T> queryWrapper,
-											Class<R> destinationClass) {
+			Class<R> destinationClass) {
 		return new PageData<>(pageWithConvert(pageRequest.buildPage(), queryWrapper, destinationClass));
 	}
 
@@ -134,4 +135,5 @@ public interface SuperService<T extends SuperEntity> extends IService<T> {
 	 * @param <R>
 	 */
 	<R> Collection<R> listByIdsWithConvert(Collection<? extends Serializable> idList, Class<R> destinationClass);
+
 }

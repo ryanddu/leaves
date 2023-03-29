@@ -11,6 +11,7 @@ import java.util.List;
 
 /**
  * RestTemplate配置
+ *
  * @author: ryan
  * @date: 2023/3/29 10:07
  **/
@@ -21,13 +22,14 @@ public class RestTemplateConfig {
 	public RestTemplate restTemplate() {
 		RestTemplate restTemplate = new RestTemplate();
 		List<HttpMessageConverter<?>> list = restTemplate.getMessageConverters();
-		//中文乱码:遍历编码规则，如果遇到字符串编码规则，那么则替换成utf-8
+		// 中文乱码:遍历编码规则，如果遇到字符串编码规则，那么则替换成utf-8
 		for (HttpMessageConverter<?> httpMessageConverter : list) {
-			if(httpMessageConverter instanceof StringHttpMessageConverter) {
+			if (httpMessageConverter instanceof StringHttpMessageConverter) {
 				((StringHttpMessageConverter) httpMessageConverter).setDefaultCharset(Charset.forName("utf-8"));
 				break;
 			}
 		}
 		return restTemplate;
 	}
+
 }
