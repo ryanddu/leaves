@@ -2,6 +2,7 @@ package com.github.ryanddu.constant;
 
 /**
  * 全局通用环境常量
+ *
  * @author: ryan
  * @date: 2023/3/24 17:46
  **/

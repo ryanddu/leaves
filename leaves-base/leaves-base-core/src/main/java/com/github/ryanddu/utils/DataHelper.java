@@ -6,6 +6,7 @@ import java.util.UUID;
 
 /**
  * 数据helper类
+ *
  * @author: ryan
  * @date: 2023/3/27 9:43
  **/
@@ -13,7 +14,6 @@ public class DataHelper {
 
 	/**
 	 * 获取唯一ID
-	 *
 	 * @return
 	 */
 	public static String getUniqueKey() {
@@ -42,7 +42,6 @@ public class DataHelper {
 
 	/**
 	 * 获取纯数字的随机数
-	 *
 	 * @param len
 	 * @return
 	 */
@@ -52,13 +51,13 @@ public class DataHelper {
 		do {
 			int nextInt = rd.nextInt(9);
 			resNum.append(nextInt);
-		} while (len-- > 0);
+		}
+		while (len-- > 0);
 		return resNum.toString();
 	}
 
 	/**
 	 * 获取字母+数字的字符串
-	 *
 	 * @param len
 	 * @return
 	 */
@@ -71,14 +70,13 @@ public class DataHelper {
 		do {
 			int nextInt = rd.nextInt(36);
 			resNum.append(new String(letters, nextInt, 1).trim());
-		} while (len-- > 1);
+		}
+		while (len-- > 1);
 		return resNum.toString().toUpperCase();
 	}
 
-
 	/**
 	 * 获取三位随机数
-	 * 
 	 * @return
 	 */
 	public static int getRandomThreePoint() {

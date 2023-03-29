@@ -2,12 +2,12 @@ package com.github.ryanddu.exception;
 
 /**
  * 异常基类
+ *
  * @author: ryan
  * @date: 2023/3/24 17:07
  **/
-public class LeavesException extends RuntimeException{
-	
-	
+public class LeavesException extends RuntimeException {
+
 	public LeavesException() {
 	}
 
@@ -22,4 +22,5 @@ public class LeavesException extends RuntimeException{
 	public LeavesException(String message, Throwable cause) {
 		super(message, cause);
 	}
+
 }

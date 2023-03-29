@@ -9,9 +9,9 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 
 import java.util.*;
 
-
 /**
  * Jackson 工具类
+ *
  * @author: ryan
  * @date: 2023/3/27 9:44
  **/
@@ -45,7 +45,6 @@ public abstract class JacksonUtils {
 	private static ObjectMapper getObjectMapper() {
 		return objectMapper;
 	}
-
 
 	/**
 	 * Json转换为对象 转换失败返回null
@@ -140,7 +139,9 @@ public abstract class JacksonUtils {
 	 * json字符串转换为map
 	 */
 	public static <T> Map<String, T> json2map(String jsonString, Class<T> clazz) throws Exception {
-		Map<String, Map<String, Object>> map = (Map<String, Map<String, Object>>) objectMapper.readValue(jsonString, new TypeReference<Map<String, T>>() {});
+		Map<String, Map<String, Object>> map = (Map<String, Map<String, Object>>) objectMapper.readValue(jsonString,
+				new TypeReference<Map<String, T>>() {
+				});
 		Map<String, T> result = new HashMap<String, T>();
 		for (Map.Entry<String, Map<String, Object>> entry : map.entrySet()) {
 			result.put(entry.getKey(), map2pojo(entry.getValue(), clazz));
@@ -150,7 +151,6 @@ public abstract class JacksonUtils {
 
 	/**
 	 * 深度转换json成map
-	 *
 	 * @param json
 	 * @return
 	 */
@@ -160,7 +160,6 @@ public abstract class JacksonUtils {
 
 	/**
 	 * 把json解析成list，如果list内部的元素存在jsonString，继续解析
-	 *
 	 * @param json
 	 * @param mapper 解析工具
 	 * @return
@@ -178,7 +177,8 @@ public abstract class JacksonUtils {
 				String str = (String) obj;
 				if (str.startsWith("[")) {
 					obj = json2ListRecursion(str, mapper);
-				} else if (obj.toString().startsWith("{")) {
+				}
+				else if (obj.toString().startsWith("{")) {
 					obj = json2MapRecursion(str, mapper);
 				}
 			}
@@ -189,7 +189,6 @@ public abstract class JacksonUtils {
 
 	/**
 	 * 把json解析成map，如果map内部的value存在jsonString，继续解析
-	 *
 	 * @param json
 	 * @param mapper
 	 * @return
@@ -210,7 +209,8 @@ public abstract class JacksonUtils {
 				if (str.startsWith("[")) {
 					List<?> list = json2ListRecursion(str, mapper);
 					map.put(entry.getKey(), list);
-				} else if (str.startsWith("{")) {
+				}
+				else if (str.startsWith("{")) {
 					Map<String, Object> mapRecursion = json2MapRecursion(str, mapper);
 					map.put(entry.getKey(), mapRecursion);
 				}
@@ -230,12 +230,10 @@ public abstract class JacksonUtils {
 		return lst;
 	}
 
-
 	/**
 	 * 获取泛型的Collection Type
-	 *
 	 * @param collectionClass 泛型的Collection
-	 * @param elementClasses  元素类
+	 * @param elementClasses 元素类
 	 * @return JavaType Java类型
 	 * @since 1.0
 	 */
@@ -243,9 +241,8 @@ public abstract class JacksonUtils {
 		return objectMapper.getTypeFactory().constructParametricType(collectionClass, elementClasses);
 	}
 
-
 	/**
-	 * map  转JavaBean
+	 * map 转JavaBean
 	 */
 	public static <T> T map2pojo(Map map, Class<T> clazz) {
 		return objectMapper.convertValue(map, clazz);
@@ -253,21 +250,21 @@ public abstract class JacksonUtils {
 
 	/**
 	 * map 转json
-	 *
 	 * @param map
 	 * @return
 	 */
 	public static String mapToJson(Map map) {
 		try {
 			return objectMapper.writeValueAsString(map);
-		} catch (Exception e) {
+		}
+		catch (Exception e) {
 			e.printStackTrace();
 		}
 		return "";
 	}
 
 	/**
-	 * map  转JavaBean
+	 * map 转JavaBean
 	 */
 	public static <T> T obj2pojo(Object obj, Class<T> clazz) {
 		return objectMapper.convertValue(obj, clazz);

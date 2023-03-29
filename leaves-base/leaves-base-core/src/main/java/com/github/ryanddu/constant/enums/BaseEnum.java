@@ -1,11 +1,13 @@
 package com.github.ryanddu.constant.enums;
 
-import com.baomidou.mybatisplus.core.enums.IEnum;
+
+import com.baomidou.mybatisplus.annotation.IEnum;
 
 import java.io.Serializable;
 
 /**
  * 枚举基类
+ *
  * @author: ryan
  * @date: 2023/3/27 20:33
  **/

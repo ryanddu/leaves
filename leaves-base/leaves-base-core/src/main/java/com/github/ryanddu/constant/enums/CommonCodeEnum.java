@@ -1,8 +1,8 @@
 package com.github.ryanddu.constant.enums;
 
-
 /**
  * 全局通用状态码枚举
+ *
  * @author: ryan
  * @date: 2023/3/24 17:43
  **/
@@ -23,15 +23,10 @@ public enum CommonCodeEnum {
 	 */
 	SERVER_BUSY(9998, "服务器繁忙"),
 
-
-
 	/**
 	 * Token
 	 */
-	TOKEN_INVALID(9996, "无效的Token"),
-	TOKEN_EXPIRE(9995, "Token已过期"),
-	NON_PERMISSION(9997, "无访问权限")
-	;
+	TOKEN_INVALID(9996, "无效的Token"), TOKEN_EXPIRE(9995, "Token已过期"), NON_PERMISSION(9997, "无访问权限");
 
 	/**
 	 * 返回码
@@ -55,4 +50,5 @@ public enum CommonCodeEnum {
 	public String getMsg() {
 		return msg;
 	}
+
 }
