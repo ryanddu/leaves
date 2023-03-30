@@ -3,13 +3,13 @@
 	<parent>
 		<groupId>com.github.ryanddu</groupId>
 		<artifactId>leaves-dependencies</artifactId>
-		<version>{revision}</version>
+		<version>${revision}</version>
 		<relativePath>leaves-dependencies/pom.xml</relativePath>
 	</parent>
   	<modelVersion>4.0.0</modelVersion>
   	<groupId>com.github.ryanddu</groupId>
   	<artifactId>leaves</artifactId>
-  	<version>{revision}</version>
+  	<version>${revision}</version>
 	<packaging>pom</packaging>
 
 	<name>leaves</name>
@@ -96,19 +96,6 @@
 		</pluginManagement>
 		<plugins>
 			<plugin>
-				<groupId>io.spring.javaformat</groupId>
-				<artifactId>spring-javaformat-maven-plugin</artifactId>
-				<executions>
-					<execution>
-						<goals>
-							<goal>validate</goal>
-						</goals>
-						<inherited>true</inherited>
-						<phase>validate</phase>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
@@ -124,30 +111,6 @@
 				<configuration>
 					<argLine>-Dfile.encoding=UTF-8</argLine>
 				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>flatten-maven-plugin</artifactId>
-				<configuration>
-					<flattenMode>resolveCiFriendliesOnly</flattenMode>
-					<updatePomFile>true</updatePomFile>
-				</configuration>
-				<executions>
-					<execution>
-						<goals>
-							<goal>flatten</goal>
-						</goals>
-						<id>flatten</id>
-						<phase>process-resources</phase>
-					</execution>
-					<execution>
-						<goals>
-							<goal>clean</goal>
-						</goals>
-						<id>flatten.clean</id>
-						<phase>clean</phase>
-					</execution>
-				</executions>
 			</plugin>
 		</plugins>
 	</build>

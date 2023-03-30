@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.ryanddu</groupId>
 	<artifactId>leaves-dependencies</artifactId>
-	<version>{revision}</version>
+	<version>${revision}</version>
 	<packaging>pom</packaging>
 
 	<name>leaves-dependencies</name>
@@ -136,22 +136,22 @@
 			<dependency>
 				<groupId>com.github.ryanddu</groupId>
 				<artifactId>leaves-base-core</artifactId>
-				<version>{revision}</version>
+				<version>${revision}</version>
 			</dependency>
 			<dependency>
 				<groupId>com.github.ryanddu</groupId>
 				<artifactId>leaves-base-api</artifactId>
-				<version>{revision}</version>
+				<version>${revision}</version>
 			</dependency>
 			<dependency>
 				<groupId>com.github.ryanddu</groupId>
 				<artifactId>leaves-base-biz</artifactId>
-				<version>{revision}</version>
+				<version>${revision}</version>
 			</dependency>
 			<dependency>
 				<groupId>com.github.ryanddu</groupId>
 				<artifactId>leaves-base-web</artifactId>
-				<version>{revision}</version>
+				<version>${revision}</version>
 			</dependency>
 			<!--endregion ============= 结束定义leaves 自身模块版本 =========== -->
 		</dependencies>
