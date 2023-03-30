@@ -16,6 +16,9 @@
 		<module>leaves-base-biz</module>
 		<module>leaves-base-core</module>
 		<module>leaves-base-web</module>
+		<module>leaves-base-cloud-api</module>
+		<module>leaves-base-cloud-biz</module>
+		<module>leaves-base-cloud-gateway</module>
 	</modules>
 
 </project>

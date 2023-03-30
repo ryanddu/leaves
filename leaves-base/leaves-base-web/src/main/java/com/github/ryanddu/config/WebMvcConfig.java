@@ -1,9 +1,5 @@
 package com.github.ryanddu.config;
 
-import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.web.context.request.RequestContextListener;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
@@ -13,14 +9,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  * @author: ryan
  * @date: 2023/3/29 10:09
  **/
-@Configuration
 public class WebMvcConfig implements WebMvcConfigurer {
-
-	@Bean
-	@ConditionalOnMissingBean(RequestContextListener.class)
-	public RequestContextListener requestContextListener() {
-		return new RequestContextListener();
-	}
 
 	/**
 	 * 为了在统一异常处理能捕获到404,在application.yml中设置了throw-exception-if-no-handler-found=true和add-mappings=false,

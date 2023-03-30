@@ -15,6 +15,11 @@
 			<groupId>com.github.ryanddu</groupId>
 			<artifactId>leaves-base-web</artifactId>
 		</dependency>
+		<!--数据库连接-->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+		</dependency>
 		<!--mybatis-plus-->
 		<dependency>
 			<groupId>com.baomidou</groupId>

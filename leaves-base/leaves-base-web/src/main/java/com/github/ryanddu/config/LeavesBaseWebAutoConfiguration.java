@@ -1,24 +1,27 @@
 package com.github.ryanddu.config;
 
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.context.request.RequestContextListener;
 
 import java.nio.charset.Charset;
 import java.util.List;
 
 /**
- * RestTemplate配置
+ * leaves-base-web自动配置类
  *
  * @author: ryan
- * @date: 2023/3/29 10:07
+ * @date: 2023/3/30 16:05
  **/
 @Configuration
-public class RestTemplateConfig {
+public class LeavesBaseWebAutoConfiguration {
 
 	@Bean
+	@ConditionalOnMissingBean
 	public RestTemplate restTemplate() {
 		RestTemplate restTemplate = new RestTemplate();
 		List<HttpMessageConverter<?>> list = restTemplate.getMessageConverters();
@@ -30,6 +33,18 @@ public class RestTemplateConfig {
 			}
 		}
 		return restTemplate;
+	}
+
+	@Bean
+	@ConditionalOnMissingBean
+	public RequestContextListener requestContextListener() {
+		return new RequestContextListener();
+	}
+
+	@Bean
+	@ConditionalOnMissingBean
+	public WebMvcConfig webMvcConfig() {
+		return new WebMvcConfig();
 	}
 
 }

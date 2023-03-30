@@ -12,6 +12,7 @@ import com.fasterxml.jackson.datatype.jsr310.deser.LocalTimeDeserializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalTimeSerializer;
+import com.github.ryanddu.converter.EnumConvertFactory;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -105,25 +106,28 @@ public class SerializeAndConverterConfig {
 	 */
 	@Bean
 	public Converter<String, Date> dateConverter() {
-		return (source) -> {
-			if (StringUtils.isBlank(source)) {
-				return null;
-			}
-			source = source.trim();
-			if (source.matches("^\\d{4}-\\d{1,2}$")) {
-				return parseDate(source, DEFAULT_YYYY_MM_FORMAT);
-			}
-			else if (source.matches("^\\d{4}-\\d{1,2}-\\d{1,2}$")) {
-				return parseDate(source, DEFAULT_DATE_FORMAT);
-			}
-			else if (source.matches("^\\d{4}-\\d{1,2}-\\d{1,2} {1}\\d{1,2}:\\d{1,2}$")) {
-				return parseDate(source, DEFAULT_YYYY_MM_DD_HH_MM_FORMAT);
-			}
-			else if (source.matches("^\\d{4}-\\d{1,2}-\\d{1,2} {1}\\d{1,2}:\\d{1,2}:\\d{1,2}$")) {
-				return parseDate(source, DEFAULT_DATE_TIME_FORMAT);
-			}
-			else {
-				throw new IllegalArgumentException("Invalid false value '" + source + "'");
+		return new Converter<String, Date>() {
+			@Override
+			public Date convert(String source) {
+				if (StringUtils.isBlank(source)) {
+					return null;
+				}
+				source = source.trim();
+				if (source.matches("^\\d{4}-\\d{1,2}$")) {
+					return parseDate(source, DEFAULT_YYYY_MM_FORMAT);
+				}
+				else if (source.matches("^\\d{4}-\\d{1,2}-\\d{1,2}$")) {
+					return parseDate(source, DEFAULT_DATE_FORMAT);
+				}
+				else if (source.matches("^\\d{4}-\\d{1,2}-\\d{1,2} {1}\\d{1,2}:\\d{1,2}$")) {
+					return parseDate(source, DEFAULT_YYYY_MM_DD_HH_MM_FORMAT);
+				}
+				else if (source.matches("^\\d{4}-\\d{1,2}-\\d{1,2} {1}\\d{1,2}:\\d{1,2}:\\d{1,2}$")) {
+					return parseDate(source, DEFAULT_DATE_TIME_FORMAT);
+				}
+				else {
+					throw new IllegalArgumentException("Invalid false value '" + source + "'");
+				}
 			}
 		};
 	}
@@ -200,6 +204,11 @@ public class SerializeAndConverterConfig {
 
 		objectMapper.registerModule(javaTimeModule);
 		return objectMapper;
+	}
+
+	@Bean
+	public EnumConvertFactory enumConvertFactory() {
+		return new EnumConvertFactory();
 	}
 
 }

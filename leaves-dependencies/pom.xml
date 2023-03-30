@@ -50,7 +50,8 @@
 
 		<!--依赖版本-->
 		<spring-boot.version>2.7.10</spring-boot.version>
-		<spring-cloud.version>Greenwich.SR4</spring-cloud.version>
+		<spring-cloud.version>2020.0.4</spring-cloud.version>
+		<alibaba-cloud.version>2021.1</alibaba-cloud.version>
 		<commons-lang3.version>3.12.0</commons-lang3.version>
 		<spring-core.version>5.3.20</spring-core.version>
 		<hutool.version>5.8.12</hutool.version>
@@ -58,6 +59,7 @@
 		<knife4j-openapi3.version>4.0.0</knife4j-openapi3.version>
 		<fastjson.version>2.0.23</fastjson.version>
 		<lombok.version>1.18.24</lombok.version>
+		<mysql-connector-java.version>8.0.28</mysql-connector-java.version>
 	</properties>
 
 	<dependencyManagement>
@@ -73,10 +75,20 @@
 				<type>pom</type>
 			</dependency>
 			<!-- spring-cloud 依赖管理 -->
+			<!--https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-dependencies/Hoxton.SR8-->
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-dependencies</artifactId>
 				<version>${spring-cloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<!-- spring-cloud-alibaba 依赖管理 -->
+			<!--https://mvnrepository.com/artifact/com.alibaba.cloud/spring-cloud-alibaba-dependencies/2.2.1.RELEASE-->
+			<dependency>
+				<groupId>com.alibaba.cloud</groupId>
+				<artifactId>spring-cloud-alibaba-dependencies</artifactId>
+				<version>${alibaba-cloud.version}</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
@@ -96,6 +108,12 @@
 				<artifactId>fastjson</artifactId>
 				<version>${fastjson.version}</version>
 				<optional>true</optional>
+			</dependency>
+			<!--数据库连接-->
+			<dependency>
+				<groupId>mysql</groupId>
+				<artifactId>mysql-connector-java</artifactId>
+				<version>${mysql-connector-java.version}</version>
 			</dependency>
 			<!--mybatis-plus-->
 			<dependency>
@@ -151,6 +169,16 @@
 			<dependency>
 				<groupId>com.github.ryanddu</groupId>
 				<artifactId>leaves-base-web</artifactId>
+				<version>${revision}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.github.ryanddu</groupId>
+				<artifactId>leaves-base-cloud-api</artifactId>
+				<version>${revision}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.github.ryanddu</groupId>
+				<artifactId>leaves-base-cloud-biz</artifactId>
 				<version>${revision}</version>
 			</dependency>
 			<!--endregion ============= 结束定义leaves 自身模块版本 =========== -->

@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
  * @author: ryan
  * @date: 2023/3/28 10:37
  **/
-public class GlobalMetaObjectHandler implements MetaObjectHandler {
+public class BaseMetaObjectHandler implements MetaObjectHandler {
 
 	/**
 	 * 创建时间

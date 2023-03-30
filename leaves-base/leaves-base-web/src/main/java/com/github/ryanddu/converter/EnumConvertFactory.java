@@ -1,10 +1,9 @@
-package com.github.ryanddu.config;
+package com.github.ryanddu.converter;
 
 import com.baomidou.mybatisplus.annotation.IEnum;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.core.convert.converter.ConverterFactory;
-import org.springframework.stereotype.Component;
 
 import javax.validation.constraints.NotNull;
 
@@ -14,7 +13,6 @@ import javax.validation.constraints.NotNull;
  * @author: ryan
  * @date: 2023/3/27 9:48
  **/
-@Component
 public class EnumConvertFactory implements ConverterFactory<String, IEnum<?>> {
 
 	public static <T extends IEnum<?>> T getEnum(Class<T> targetType, String source) {

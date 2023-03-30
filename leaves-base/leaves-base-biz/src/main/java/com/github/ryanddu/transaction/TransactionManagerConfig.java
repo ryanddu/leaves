@@ -20,7 +20,7 @@ import java.util.Properties;
 @Configuration
 public class TransactionManagerConfig {
 
-	public static final String transactionExecution = "execution(* com.github.ryanddu..service..*(..))";
+	public static final String transactionExecution = "execution(public *..service..*(..))";
 
 	@Resource
 	private PlatformTransactionManager transactionManager;
