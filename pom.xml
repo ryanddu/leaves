@@ -39,7 +39,7 @@
 
   	<modules>
     	<module>leaves-base</module>
-    	<module>leaves-common</module>
+    	<module>leaves-utils</module>
     	<module>leaves-starters</module>
 		<module>leaves-dependencies</module>
   	</modules>

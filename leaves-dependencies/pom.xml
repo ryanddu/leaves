@@ -55,11 +55,13 @@
 		<commons-lang3.version>3.12.0</commons-lang3.version>
 		<spring-core.version>5.3.20</spring-core.version>
 		<hutool.version>5.8.12</hutool.version>
-		<mybatis-plus.version>3.5.3.1</mybatis-plus.version>
+		<mybatis-plus.version>3.5.3</mybatis-plus.version>
+		<mybatis-plus-generator.version>3.4.0</mybatis-plus-generator.version>
 		<knife4j-openapi3.version>4.0.0</knife4j-openapi3.version>
 		<fastjson.version>2.0.23</fastjson.version>
 		<lombok.version>1.18.24</lombok.version>
 		<mysql-connector-java.version>8.0.28</mysql-connector-java.version>
+		<freemarker.version>2.3.31</freemarker.version>
 	</properties>
 
 	<dependencyManagement>
@@ -136,6 +138,16 @@
 				<groupId>com.baomidou</groupId>
 				<artifactId>mybatis-plus-extension</artifactId>
 				<version>${mybatis-plus.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.baomidou</groupId>
+				<artifactId>mybatis-plus-generator</artifactId>
+				<version>${mybatis-plus-generator.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.freemarker</groupId>
+				<artifactId>freemarker</artifactId>
+				<version>${freemarker.version}</version>
 			</dependency>
 			<!--knife4j-openapi3-->
 			<dependency>
