@@ -33,17 +33,28 @@ public class MpGenerator {
      */
     private GlobalConfig getGlobalConfig() {
         GlobalConfig gc = new GlobalConfig();
-        gc.setOutputDir(PROPS.getStr("project.path") + "/src/main/java"); //生成文件的输出目录
-        gc.setFileOverride(false); // 是否覆盖已有文件
-        gc.setOpen(false); // 是否打开输出目录
-        gc.setSwagger2(false); // 开启 swagger2 模式
-        gc.setAuthor(PROPS.getStr("global.author")); // 开发人员
-        gc.setActiveRecord(false); // 开启 ActiveRecord 模式,默认false
-        gc.setIdType(IdType.NONE); //指定生成的主键的ID类型，该类型为未设置主键类型(将跟随全局)
-        gc.setBaseResultMap(true); // 开启 BaseResultMap
-        gc.setBaseColumnList(true); // 开启 baseColumnList
-        gc.setDateType(DateType.TIME_PACK); //使用JDK8的日期时间API，默认TIME_PACK
-        gc.setEntityName("%s"); // 自定义文件命名，注意 %s 会自动填充表实体属性！
+		//生成文件的输出目录
+        gc.setOutputDir(PROPS.getStr("project.path") + "/src/main/java");
+		// 是否覆盖已有文件
+        gc.setFileOverride(false);
+		// 是否打开输出目录
+        gc.setOpen(false);
+		// 开启 swagger2 模式
+        gc.setSwagger2(false);
+		// 开发人员
+        gc.setAuthor(PROPS.getStr("global.author"));
+		// 开启 ActiveRecord 模式,默认false
+        gc.setActiveRecord(false);
+		//指定生成的主键的ID类型，该类型为未设置主键类型(将跟随全局)
+        gc.setIdType(IdType.NONE);
+		// 开启 BaseResultMap
+        gc.setBaseResultMap(true);
+		// 开启 baseColumnList
+        gc.setBaseColumnList(true);
+		//使用JDK8的日期时间API，默认TIME_PACK
+        gc.setDateType(DateType.TIME_PACK);
+		// 自定义文件命名，注意 %s 会自动填充表实体属性！
+        gc.setEntityName("%s");
         gc.setMapperName("%sMapper");
         gc.setXmlName("%sMapper");
         gc.setServiceName("%sService");
@@ -71,15 +82,13 @@ public class MpGenerator {
      */
     private PackageConfig getPackageConfig() {
         PackageConfig pc = new PackageConfig();
-
-        // pc.setParent(PROPS.getStr("package.parent") + ".business"); //父级包名
-        pc.setParent(PROPS.getStr("package.parent")); //父级包名
-
+		//父级包名
+        pc.setParent(PROPS.getStr("package.parent"));
         String moduleName = PROPS.getStr("package.moduleName", "");
         if (StrUtil.isNotBlank(moduleName)) {
-            pc.setModuleName(moduleName); //模块名
+			//模块名
+            pc.setModuleName(moduleName);
         }
-
         pc.setEntity("model");
         pc.setMapper("mapper");
         pc.setXml("mapper");
@@ -109,12 +118,9 @@ public class MpGenerator {
         StrategyConfig strategyConfig = new StrategyConfig();
         // 是否大写命名
         strategyConfig.setCapitalMode(false);
-
         String [] tables = PROPS.getStr("strategy.include").split(",");
         // 需要包含的表名
         strategyConfig.setInclude(tables);
-        // 需要包含的表名
-        //strategyConfig.setInclude(PROPS.getStr("strategy.include"));
         // 表前缀
         strategyConfig.setTablePrefix(PROPS.getStr("strategy.fieldPrefix"));
         // 表名生成策略
@@ -134,21 +140,21 @@ public class MpGenerator {
         //表填充字段
         strategyConfig.setTableFillList(tableFillList);
         //自定义基础的Entity类，公共字段
-        strategyConfig.setSuperEntityColumns("id", "gmt_create", "gmt_update", "create_by", "update_by","org_code","data_code","create_data_source","update_data_source");
+        strategyConfig.setSuperEntityColumns("id", "gmt_create", "gmt_update", "create_by", "update_by");
         // 自定义继承的Entity类全称，带包名
-        strategyConfig.setSuperEntityClass("com.xk.base.biz.ext.UpdateEntity");
+        strategyConfig.setSuperEntityClass("com.github.ryanddu.ext.UpdateSnowFlakeEntity");
         // 自定义继承的Mapper类全称，带包名
-        strategyConfig.setSuperMapperClass("com.xk.base.biz.ext.SuperMapper");
+        strategyConfig.setSuperMapperClass("com.github.ryanddu.ext.SuperMapper");
         // 自定义继承的Service类全称，带包名
-        strategyConfig.setSuperServiceClass("com.xk.base.biz.ext.SuperService");
+        strategyConfig.setSuperServiceClass("ccom.github.ryanddu.ext.SuperService");
         // 自定义继承的ServiceImpl类全称，带包名
-        strategyConfig.setSuperServiceImplClass("com.xk.base.biz.ext.SuperServiceImpl");
+        strategyConfig.setSuperServiceImplClass("com.github.ryanddu.ext.SuperServiceImpl");
         //是否生成RestController风格
         strategyConfig.setRestControllerStyle(true);
         // 驼峰转连字符
         strategyConfig.setControllerMappingHyphenStyle(true);
         //自定义继承的Controller类全称，带包名
-        strategyConfig.setSuperControllerClass("com.xk.base.biz.ext.SuperController");
+        strategyConfig.setSuperControllerClass("com.github.ryanddu.ext.SuperController");
 
         return strategyConfig;
     }
