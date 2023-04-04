@@ -11,7 +11,7 @@ public class CodeException extends LeavesException {
 	/**
 	 * 异常状态码
 	 */
-	private Integer code;
+	private int code;
 
 	/**
 	 * 异常消息参数

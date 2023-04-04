@@ -46,7 +46,7 @@ public interface Assert<T extends LeavesException> {
 	 * @param code 异常code
 	 * @return 异常对象
 	 */
-	default T newException(Integer code) {
+	default T newException(int code) {
 		throw new RuntimeException("未找到异常断言实现");
 	}
 
@@ -56,7 +56,25 @@ public interface Assert<T extends LeavesException> {
 	 * @param args 异常参数
 	 * @return 异常对象
 	 */
-	default T newException(Integer code, Object... args) {
+	default T newException(int code, Object... args) {
+		throw new RuntimeException("未找到异常断言实现");
+	}
+
+	/**
+	 * 创建异常
+	 * @return
+	 */
+	default T newException() {
+		throw new RuntimeException("未找到异常断言实现");
+	}
+
+	/**
+	 * 通过异常编码和异常消息创建异常类
+	 * @param code
+	 * @param message
+	 * @return
+	 */
+	default T newException(int code,String message) {
 		throw new RuntimeException("未找到异常断言实现");
 	}
 
@@ -65,7 +83,7 @@ public interface Assert<T extends LeavesException> {
 	 * 断言对象<code>obj</code>非空。如果对象<code>obj</code>为空，则抛出异常
 	 * @param obj 待判断对象
 	 */
-	default void assertNotNull(Object obj, Integer code) {
+	default void assertNotNull(Object obj, int code) {
 		if (obj == null) {
 			throw newException(code);
 		}
@@ -79,7 +97,7 @@ public interface Assert<T extends LeavesException> {
 	 * @param obj 待判断对象
 	 * @param args message占位符对应的参数列表
 	 */
-	default void assertNotNull(Object obj, Integer code, Object... args) {
+	default void assertNotNull(Object obj, int code, Object... args) {
 		if (obj == null) {
 			throw newException(code, args);
 		}
@@ -90,7 +108,7 @@ public interface Assert<T extends LeavesException> {
 	 * 断言字符串<code>str</code>不为空串（长度为0）。如果字符串<code>str</code>为空串，则抛出异常
 	 * @param str 待判断字符串
 	 */
-	default void assertNotEmpty(Integer code, String str) {
+	default void assertNotEmpty(int code, String str) {
 		if (null == str || "".equals(str.trim())) {
 			throw newException(code);
 		}
@@ -104,7 +122,7 @@ public interface Assert<T extends LeavesException> {
 	 * @param str 待判断字符串
 	 * @param args message占位符对应的参数列表
 	 */
-	default void assertNotEmpty(String str, Integer code, Object... args) {
+	default void assertNotEmpty(String str, int code, Object... args) {
 		if (str == null || "".equals(str.trim())) {
 			throw newException(code, args);
 		}
@@ -115,7 +133,7 @@ public interface Assert<T extends LeavesException> {
 	 * 断言数组<code>arrays</code>大小不为0。如果数组<code>arrays</code>大小不为0，则抛出异常
 	 * @param arrays 待判断数组
 	 */
-	default void assertNotEmpty(Object[] arrays, Integer code) {
+	default void assertNotEmpty(Object[] arrays, int code) {
 		if (arrays == null || arrays.length == 0) {
 			throw newException(code);
 		}
@@ -129,7 +147,7 @@ public interface Assert<T extends LeavesException> {
 	 * @param arrays 待判断数组
 	 * @param args message占位符对应的参数列表
 	 */
-	default void assertNotEmpty(Object[] arrays, Integer code, Object... args) {
+	default void assertNotEmpty(Object[] arrays, int code, Object... args) {
 		if (arrays == null || arrays.length == 0) {
 			throw newException(code);
 		}
@@ -140,7 +158,7 @@ public interface Assert<T extends LeavesException> {
 	 * 断言集合<code>c</code>大小不为0。如果集合<code>c</code>大小不为0，则抛出异常
 	 * @param c 待判断数组
 	 */
-	default void assertNotEmpty(Collection<?> c, Integer code) {
+	default void assertNotEmpty(Collection<?> c, int code) {
 		if (c == null || c.isEmpty()) {
 			throw newException(code);
 		}
@@ -152,7 +170,7 @@ public interface Assert<T extends LeavesException> {
 	 * @param c 待判断数组
 	 * @param args message占位符对应的参数列表
 	 */
-	default void assertNotEmpty(Collection<?> c, Integer code, Object... args) {
+	default void assertNotEmpty(Collection<?> c, int code, Object... args) {
 		if (c == null || c.isEmpty()) {
 			throw newException(code, args);
 		}
@@ -163,7 +181,7 @@ public interface Assert<T extends LeavesException> {
 	 * 断言Map<code>map</code>大小不为0。如果Map<code>map</code>大小不为0，则抛出异常
 	 * @param map 待判断Map
 	 */
-	default void assertNotEmpty(Map<?, ?> map, Integer code) {
+	default void assertNotEmpty(Map<?, ?> map, int code) {
 		if (map == null || map.isEmpty()) {
 			throw newException(code);
 		}
@@ -175,7 +193,7 @@ public interface Assert<T extends LeavesException> {
 	 * @param map 待判断Map
 	 * @param args message占位符对应的参数列表
 	 */
-	default void assertNotEmpty(Map<?, ?> map, Integer code, Object... args) {
+	default void assertNotEmpty(Map<?, ?> map, int code, Object... args) {
 		if (map == null || map.isEmpty()) {
 			throw newException(code, args);
 		}
@@ -186,7 +204,7 @@ public interface Assert<T extends LeavesException> {
 	 * 断言布尔值<code>expression</code>为false。如果布尔值<code>expression</code>为true，则抛出异常
 	 * @param expression 待判断布尔变量
 	 */
-	default void assertIsFalse(boolean expression, Integer code) {
+	default void assertIsFalse(boolean expression, int code) {
 		if (expression) {
 			throw newException(code);
 		}
@@ -198,7 +216,7 @@ public interface Assert<T extends LeavesException> {
 	 * @param expression 待判断布尔变量
 	 * @param args message占位符对应的参数列表
 	 */
-	default void assertIsFalse(boolean expression, Integer code, Object... args) {
+	default void assertIsFalse(boolean expression, int code, Object... args) {
 		if (expression) {
 			throw newException(code, args);
 		}
@@ -209,7 +227,7 @@ public interface Assert<T extends LeavesException> {
 	 * 断言布尔值<code>expression</code>为true。如果布尔值<code>expression</code>为false，则抛出异常
 	 * @param expression 待判断布尔变量
 	 */
-	default void assertIsTrue(boolean expression, Integer code) {
+	default void assertIsTrue(boolean expression, int code) {
 		if (!expression) {
 			throw newException(code);
 		}
@@ -221,7 +239,7 @@ public interface Assert<T extends LeavesException> {
 	 * @param expression 待判断布尔变量
 	 * @param args message占位符对应的参数列表
 	 */
-	default void assertIsTrue(boolean expression, Integer code, Object... args) {
+	default void assertIsTrue(boolean expression, int code, Object... args) {
 		if (!expression) {
 			throw newException(code, args);
 		}
@@ -232,7 +250,7 @@ public interface Assert<T extends LeavesException> {
 	 * 断言对象<code>obj</code>为<code>null</code>。如果对象<code>obj</code>不为<code>null</code>，则抛出异常
 	 * @param obj 待判断对象
 	 */
-	default void assertIsNull(Object obj, Integer code) {
+	default void assertIsNull(Object obj, int code) {
 		if (obj != null) {
 			throw newException(code);
 		}
@@ -244,7 +262,7 @@ public interface Assert<T extends LeavesException> {
 	 * @param obj 待判断布尔变量
 	 * @param args message占位符对应的参数列表
 	 */
-	default void assertIsNull(Object obj, Integer code, Object... args) {
+	default void assertIsNull(Object obj, int code, Object... args) {
 		if (obj != null) {
 			throw newException(code);
 		}
@@ -254,7 +272,7 @@ public interface Assert<T extends LeavesException> {
 	 * <p>
 	 * 直接抛出异常
 	 */
-	default void assertFail(Integer code) {
+	default void assertFail(int code) {
 		throw newException(code);
 	}
 
@@ -263,7 +281,7 @@ public interface Assert<T extends LeavesException> {
 	 * 直接抛出异常
 	 * @param args message占位符对应的参数列表
 	 */
-	default void assertFail(Integer code, Object... args) {
+	default void assertFail(int code, Object... args) {
 		throw newException(code);
 	}
 
@@ -284,7 +302,7 @@ public interface Assert<T extends LeavesException> {
 	 * @param o1 待判断对象，若<code>o1</code>为null，也当作不相等处理
 	 * @param o2 待判断对象
 	 */
-	default void assertEquals(Object o1, Object o2, Integer code) {
+	default void assertEquals(Object o1, Object o2, int code) {
 		if (o1 == o2) {
 			return;
 		}
@@ -303,7 +321,7 @@ public interface Assert<T extends LeavesException> {
 	 * @param o2 待判断对象
 	 * @param args message占位符对应的参数列表
 	 */
-	default void assertEquals(Object o1, Object o2, Integer code, Object... args) {
+	default void assertEquals(Object o1, Object o2, int code, Object... args) {
 		if (o1 == o2) {
 			return;
 		}

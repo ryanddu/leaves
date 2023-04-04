@@ -12,12 +12,12 @@ import com.github.ryanddu.exception.LeavesException;
 public class CodeExceptionAssert implements Assert<LeavesException> {
 
 	@Override
-	public CodeException newException(Integer code) {
+	public CodeException newException(int code) {
 		return new CodeException(code);
 	}
 
 	@Override
-	public CodeException newException(Integer code, Object... args) {
+	public CodeException newException(int code, Object... args) {
 		return new CodeException(code, args);
 	}
 
