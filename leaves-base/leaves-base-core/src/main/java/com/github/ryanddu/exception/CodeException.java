@@ -27,6 +27,14 @@ public class CodeException extends LeavesException {
 		this.args = args;
 	}
 
+	public int getCode() {
+		return code;
+	}
+
+	public void setCode(int code) {
+		this.code = code;
+	}
+
 	public Object[] getArgs() {
 		return args;
 	}

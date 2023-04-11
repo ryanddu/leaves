@@ -14,6 +14,21 @@ public enum CommonCodeEnum {
 	SUCCESS(0, "请求成功"),
 
 	/**
+	 * 缺少必要参数
+	 */
+	REQUIRED_PARAMETER_MISSING(1000,"缺少必要参数"),
+
+	/**
+	 * 参数类型不匹配
+	 */
+	PARAMETER_TYPE_DO_NOT_MATCH(1001,"参数类型不匹配"),
+
+	/**
+	 * 参数错误
+	 */
+	PARAMETER_ERROR(1002,"参数错误"),
+
+	/**
 	 * 服务器异常，无法识别的异常，尽可能对通过判断减少未定义异常抛出
 	 */
 	SERVER_ERROR(9999, "服务器异常"),

@@ -1,7 +1,10 @@
 package com.github.ryanddu.vo.res;
 
 import com.github.ryanddu.constant.enums.CommonCodeEnum;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.ToString;
 
 import java.util.Optional;
@@ -12,9 +15,16 @@ import java.util.Optional;
  * @author: ryan
  * @date: 2023/3/27 20:01
  **/
+@Getter
+@Setter
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
 public class R<T> extends CommonResponse<T> {
+	/**
+	 * 上下文
+	 */
+	@Schema(description = "上下文")
+	private String context;
 
 	public R() {
 		super();

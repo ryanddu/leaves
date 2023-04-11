@@ -1,5 +1,6 @@
 package com.github.ryanddu.vo.res;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -16,6 +17,7 @@ public class CommonResponse<T> extends BaseResponse {
 	/**
 	 * 响应数据
 	 */
+	@Schema(description = "响应数据")
 	protected T data;
 
 	public CommonResponse() {
