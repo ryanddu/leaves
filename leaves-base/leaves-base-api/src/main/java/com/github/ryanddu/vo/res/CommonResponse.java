@@ -24,8 +24,21 @@ public class CommonResponse<T> extends BaseResponse {
 		super();
 	}
 
+	public CommonResponse(int code) {
+		super(code);
+	}
+
 	public CommonResponse(T data) {
 		super();
+		this.data = data;
+	}
+
+	public CommonResponse(int code,String msg) {
+		super(code,msg);
+	}
+
+	public CommonResponse(int code, String msg,T data) {
+		super(code,msg);
 		this.data = data;
 	}
 

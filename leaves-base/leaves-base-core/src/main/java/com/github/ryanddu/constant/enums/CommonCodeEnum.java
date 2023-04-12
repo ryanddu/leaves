@@ -14,6 +14,22 @@ public enum CommonCodeEnum {
 	SUCCESS(0, "请求成功"),
 
 	/**
+	 * 未找到匹配路径
+	 */
+	NOT_FOUND(404,"未找到匹配路径"),
+
+	/**
+	 * 不允许的请求method
+	 */
+	METHOD_NOT_ALLOWED(405,"不允许的请求method"),
+
+	/**
+	 * 不支持的ContentType
+	 */
+	NOT_ACCEPTABLE(406,"不支持的ContentType"),
+
+
+	/**
 	 * 缺少必要参数
 	 */
 	REQUIRED_PARAMETER_MISSING(1000,"缺少必要参数"),
@@ -34,14 +50,19 @@ public enum CommonCodeEnum {
 	SERVER_ERROR(9999, "服务器异常"),
 
 	/**
+	 * 服务器异常，带异常详情
+	 */
+	SERVER_ERROR_WITH_DETAIL(9998, "服务器异常"),
+
+	/**
 	 * 服务器繁忙，请稍后重试
 	 */
-	SERVER_BUSY(9998, "服务器繁忙"),
+	SERVER_BUSY(9997, "服务器繁忙"),
 
 	/**
 	 * Token
 	 */
-	TOKEN_INVALID(9996, "无效的Token"), TOKEN_EXPIRE(9995, "Token已过期"), NON_PERMISSION(9997, "无访问权限");
+	TOKEN_INVALID(9996, "无效的Token"), TOKEN_EXPIRE(9995, "Token已过期"), NON_PERMISSION(9994, "无访问权限");
 
 	/**
 	 * 返回码

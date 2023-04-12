@@ -7,8 +7,6 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-import java.util.Optional;
-
 /**
  * 通用响应
  *
@@ -30,35 +28,29 @@ public class R<T> extends CommonResponse<T> {
 		super();
 	}
 
+	public R(int code) {
+		super(code);
+	}
+
 	public R(T data) {
-		super();
-		this.data = data;
+		super(data);
 	}
 
-	public R(T data, String msg) {
-		super();
-		this.data = data;
-		this.msg = msg;
+	public R(int code,String msg) {
+		super(code,msg);
 	}
 
-	public R(Throwable e) {
-		super();
-		this.msg = e.getMessage();
-		this.code = CommonCodeEnum.SERVER_ERROR.getCode();
+	public R(int code, String msg,T data) {
+		super(code,msg,data);
 	}
 
-	public R(int errorCode, String msg) {
-		errorCode = Optional.ofNullable(errorCode).orElse(CommonCodeEnum.SERVER_ERROR.getCode());
-		this.code = errorCode;
-		this.msg = msg;
-	}
 
 	/**
 	 * 成功
 	 * @return 响应实体
 	 */
 	public static R ok() {
-		return restResult(null, CommonCodeEnum.SUCCESS.getCode(), CommonCodeEnum.SUCCESS.getMsg());
+		return restResult(CommonCodeEnum.SUCCESS.getCode(), CommonCodeEnum.SUCCESS.getMsg(),null);
 	}
 
 	/**
@@ -69,7 +61,26 @@ public class R<T> extends CommonResponse<T> {
 	 * @return
 	 */
 	public static <T> R<T> ok(T data) {
-		return restResult(data, CommonCodeEnum.SUCCESS.getCode(), CommonCodeEnum.SUCCESS.getMsg());
+		return restResult(CommonCodeEnum.SUCCESS.getCode(), CommonCodeEnum.SUCCESS.getMsg(),data);
+	}
+
+	/**
+	 * 失败
+	 * @param <T>
+	 * @return
+	 */
+	public static <T> R<T> failed() {
+		return restResult(CommonCodeEnum.SERVER_ERROR.getCode(), CommonCodeEnum.SUCCESS.getMsg(), null);
+	}
+
+	/**
+	 * 失败
+	 * @param code
+	 * @param <T>
+	 * @return
+	 */
+	public static <T> R<T> failed(int code) {
+		return restResult(code, null,null);
 	}
 
 	/**
@@ -79,25 +90,35 @@ public class R<T> extends CommonResponse<T> {
 	 * @return
 	 */
 	public static <T> R<T> failed(String msg) {
-		return restResult(null, CommonCodeEnum.SERVER_ERROR.getCode(), msg);
+		return restResult(CommonCodeEnum.SERVER_ERROR.getCode(), msg,null);
 	}
 
 	/**
 	 * 失败
-	 * @param errorCode 错误响应码
+	 * @param data
+	 * @param <T>
+	 * @return
+	 */
+	public static <T> R<T> failed(T data) {
+		return restResult(CommonCodeEnum.SERVER_ERROR.getCode(), CommonCodeEnum.SERVER_ERROR.getMsg(),data);
+	}
+
+	/**
+	 * 失败
+	 * @param code 错误响应码
 	 * @param msg 消息
 	 * @return
 	 */
-	public static <T> R<T> failed(int errorCode, String msg) {
-		return restResult(null, errorCode, msg);
+	public static <T> R<T> failed(int code, String msg) {
+		return restResult(code, msg,null);
 	}
 
-	public static <T> R<T> failed(int errorCode, String msg, T data) {
-		return restResult(data, errorCode, msg);
+	public static <T> R<T> failed(int code, String msg, T data) {
+		return restResult(code, msg,data);
 	}
 
-	public static <T> R<T> failed(R errorR) {
-		return restResult(null, errorR.getCode(), errorR.getMsg());
+	public static <T> R<T> failed(R<T> r) {
+		return restResult(r.getCode(), r.getMsg(),r.getData());
 	}
 
 	public static R result(boolean result) {
@@ -105,7 +126,7 @@ public class R<T> extends CommonResponse<T> {
 			return ok(result);
 		}
 		else {
-			return failed(CommonCodeEnum.SERVER_ERROR.getCode(), CommonCodeEnum.SERVER_ERROR.getMsg(), result);
+			return failed(result);
 		}
 	}
 
@@ -118,12 +139,8 @@ public class R<T> extends CommonResponse<T> {
 		}
 	}
 
-	private static <T> R<T> restResult(T data, int code, String msg) {
-		R<T> apiResult = new R<>();
-		apiResult.setCode(code);
-		apiResult.setData(data);
-		apiResult.setMsg(msg);
-		return apiResult;
+	private static <T> R<T> restResult(int code, String msg,T data) {
+		return new R<>(code,msg,data);
 	}
 
 	/**
