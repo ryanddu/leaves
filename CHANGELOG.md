@@ -36,10 +36,9 @@
     - openfeign
 - leaves-dependencies 依赖统一管理模块
   - 项目有关的依赖统一管理
-- leaves-utils 工具类模块
+- leaves-utils 提效类工具模块
   - codegen 代码生成工具
     - 提供多种代码模板
     - 根据配置动态生成项目代码
 - leaves-starters 提供丰富的项目插件式starter
   - 待持续迭代
-
