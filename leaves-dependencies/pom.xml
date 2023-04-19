@@ -64,6 +64,7 @@
 		<freemarker.version>2.3.31</freemarker.version>
 		<apm-toolkit-trace.version>8.10.0</apm-toolkit-trace.version>
 		<okhttp.version>4.10.0</okhttp.version>
+		<guava.version>31.1-jre</guava.version>
 	</properties>
 
 	<dependencyManagement>
@@ -172,6 +173,11 @@
 				<groupId>com.squareup.okhttp3</groupId>
 				<artifactId>okhttp</artifactId>
 				<version>${okhttp.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.google.guava</groupId>
+				<artifactId>guava</artifactId>
+				<version>${guava.version}</version>
 			</dependency>
 
 			<!--region ============= 定义leaves 自身模块版本 ================== -->
