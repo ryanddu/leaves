@@ -1,4 +1,4 @@
-package com.github.ryanddu.config;
+package x;
 
 import org.springframework.context.annotation.Configuration;
 

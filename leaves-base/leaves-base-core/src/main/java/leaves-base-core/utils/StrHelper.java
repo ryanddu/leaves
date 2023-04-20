@@ -22,7 +22,7 @@ public final class StrHelper {
     }
 
     public static String getOrDef(String val, String def) {
-        return DefValueHelper.getOrDef(val, def);
+        return com.github.ryanddu.utils.DefValueHelper.getOrDef(val, def);
     }
 
     /**

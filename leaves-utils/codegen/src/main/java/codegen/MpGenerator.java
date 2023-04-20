@@ -1,4 +1,4 @@
-package com.github.ryanddu;
+package codegen;
 
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.setting.dialect.Props;
