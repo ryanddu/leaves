@@ -1,6 +1,6 @@
-package com.github.ryanddu.assertion;
+package io.github.ryanddu.assertion;
 
-import com.github.ryanddu.exception.BizException;
+import io.github.ryanddu.exception.BizException;
 
 /**
  * BizException断言

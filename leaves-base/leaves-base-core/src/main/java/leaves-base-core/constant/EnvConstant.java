@@ -1,4 +1,4 @@
-package com.github.ryanddu.constant;
+package io.github.ryanddu.constant;
 
 /**
  * 全局通用环境常量

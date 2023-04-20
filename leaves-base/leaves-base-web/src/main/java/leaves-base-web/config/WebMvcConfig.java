@@ -1,4 +1,4 @@
-package com.github.ryanddu.config;
+package io.github.ryanddu.config;
 
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;

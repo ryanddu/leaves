@@ -1,4 +1,4 @@
-package com.github.ryanddu.utils;
+package io.github.ryanddu.utils;
 
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;

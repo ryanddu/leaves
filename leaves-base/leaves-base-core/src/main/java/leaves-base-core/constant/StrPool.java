@@ -1,4 +1,4 @@
-package com.github.ryanddu.constant;
+package io.github.ryanddu.constant;
 
 import cn.hutool.core.util.RandomUtil;
 

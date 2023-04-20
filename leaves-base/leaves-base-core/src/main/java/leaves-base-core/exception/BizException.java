@@ -1,6 +1,6 @@
-package com.github.ryanddu.exception;
+package io.github.ryanddu.exception;
 
-import com.github.ryanddu.constant.enums.CommonCodeEnum;
+import io.github.ryanddu.constant.enums.CommonCodeEnum;
 
 /**
  * 非国际化异常基类

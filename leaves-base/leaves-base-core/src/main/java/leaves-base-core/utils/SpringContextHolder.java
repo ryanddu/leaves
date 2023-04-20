@@ -1,4 +1,4 @@
-package com.github.ryanddu.utils;
+package io.github.ryanddu.utils;
 
 import cn.hutool.core.util.ArrayUtil;
 import lombok.extern.slf4j.Slf4j;

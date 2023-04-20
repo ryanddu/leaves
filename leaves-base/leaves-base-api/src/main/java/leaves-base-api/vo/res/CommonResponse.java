@@ -1,4 +1,4 @@
-package com.github.ryanddu.vo.res;
+package io.github.ryanddu.vo.res;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;

@@ -1,6 +1,6 @@
-package com.github.ryanddu.vo.req;
+package io.github.ryanddu.vo.req;
 
-import com.github.ryanddu.converter.Convert;
+import io.github.ryanddu.converter.Convert;
 
 import java.io.Serializable;
 

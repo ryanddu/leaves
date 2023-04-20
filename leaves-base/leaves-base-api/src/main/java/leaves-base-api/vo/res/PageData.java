@@ -1,8 +1,8 @@
-package com.github.ryanddu.vo.res;
+package io.github.ryanddu.vo.res;
 
 import cn.hutool.core.collection.CollUtil;
 import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.github.ryanddu.vo.req.PageRequest;
+import io.github.ryanddu.vo.req.PageRequest;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 

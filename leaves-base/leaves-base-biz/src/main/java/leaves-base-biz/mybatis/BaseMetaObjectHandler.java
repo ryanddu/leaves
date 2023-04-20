@@ -1,4 +1,4 @@
-package com.github.ryanddu.mybatis;
+package io.github.ryanddu.mybatis;
 
 import com.baomidou.mybatisplus.core.handlers.MetaObjectHandler;
 import org.apache.ibatis.reflection.MetaObject;

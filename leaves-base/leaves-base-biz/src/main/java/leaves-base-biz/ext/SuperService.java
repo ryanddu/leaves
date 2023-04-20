@@ -1,13 +1,13 @@
-package com.github.ryanddu.ext;
+package io.github.ryanddu.ext;
 
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.github.ryanddu.utils.BeanUtils;
-import com.github.ryanddu.vo.req.BaseRequest;
-import com.github.ryanddu.vo.req.PageRequest;
-import com.github.ryanddu.vo.res.PageData;
+import io.github.ryanddu.utils.BeanUtils;
+import io.github.ryanddu.vo.req.BaseRequest;
+import io.github.ryanddu.vo.req.PageRequest;
+import io.github.ryanddu.vo.res.PageData;
 
 import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;

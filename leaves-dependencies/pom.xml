@@ -3,7 +3,7 @@
 		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.github.ryanddu</groupId>
+	<groupId>io.github.ryanddu</groupId>
 	<artifactId>leaves-dependencies</artifactId>
 	<version>${revision}</version>
 	<packaging>pom</packaging>
@@ -182,32 +182,32 @@
 
 			<!--region ============= 定义leaves 自身模块版本 ================== -->
 			<dependency>
-				<groupId>com.github.ryanddu</groupId>
+				<groupId>io.github.ryanddu</groupId>
 				<artifactId>leaves-base-core</artifactId>
 				<version>${revision}</version>
 			</dependency>
 			<dependency>
-				<groupId>com.github.ryanddu</groupId>
+				<groupId>io.github.ryanddu</groupId>
 				<artifactId>leaves-base-api</artifactId>
 				<version>${revision}</version>
 			</dependency>
 			<dependency>
-				<groupId>com.github.ryanddu</groupId>
+				<groupId>io.github.ryanddu</groupId>
 				<artifactId>leaves-base-biz</artifactId>
 				<version>${revision}</version>
 			</dependency>
 			<dependency>
-				<groupId>com.github.ryanddu</groupId>
+				<groupId>io.github.ryanddu</groupId>
 				<artifactId>leaves-base-web</artifactId>
 				<version>${revision}</version>
 			</dependency>
 			<dependency>
-				<groupId>com.github.ryanddu</groupId>
+				<groupId>io.github.ryanddu</groupId>
 				<artifactId>leaves-base-cloud-api</artifactId>
 				<version>${revision}</version>
 			</dependency>
 			<dependency>
-				<groupId>com.github.ryanddu</groupId>
+				<groupId>io.github.ryanddu</groupId>
 				<artifactId>leaves-base-cloud-biz</artifactId>
 				<version>${revision}</version>
 			</dependency>

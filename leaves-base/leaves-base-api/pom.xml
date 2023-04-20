@@ -2,7 +2,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>leaves-base</artifactId>
-        <groupId>com.github.ryanddu</groupId>
+        <groupId>io.github.ryanddu</groupId>
         <version>${revision}</version>
     </parent>
 
@@ -13,7 +13,7 @@
 	<dependencies>
 		<!--leaves-base-code-->
 		<dependency>
-			<groupId>com.github.ryanddu</groupId>
+			<groupId>io.github.ryanddu</groupId>
 			<artifactId>leaves-base-core</artifactId>
 		</dependency>
 		<!--参数校验-->

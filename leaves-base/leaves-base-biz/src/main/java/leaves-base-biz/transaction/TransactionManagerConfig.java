@@ -1,5 +1,5 @@
 
-package com.github.ryanddu.transaction;
+package io.github.ryanddu.transaction;
 
 import org.springframework.aop.aspectj.AspectJExpressionPointcut;
 import org.springframework.aop.support.DefaultPointcutAdvisor;

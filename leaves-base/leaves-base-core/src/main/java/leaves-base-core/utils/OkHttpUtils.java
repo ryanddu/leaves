@@ -1,6 +1,6 @@
 
 
-package com.github.ryanddu.utils;
+package io.github.ryanddu.utils;
 
 import okhttp3.*;
 import org.slf4j.Logger;

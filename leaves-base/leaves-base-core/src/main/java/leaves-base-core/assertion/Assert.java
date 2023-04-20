@@ -1,6 +1,6 @@
-package com.github.ryanddu.assertion;
+package io.github.ryanddu.assertion;
 
-import com.github.ryanddu.exception.LeavesException;
+import io.github.ryanddu.exception.LeavesException;
 
 import java.util.Collection;
 import java.util.Map;

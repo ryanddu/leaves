@@ -1,4 +1,4 @@
-package com.github.ryanddu.constant.enums;
+package io.github.ryanddu.constant.enums;
 
 /**
  * 性别枚举

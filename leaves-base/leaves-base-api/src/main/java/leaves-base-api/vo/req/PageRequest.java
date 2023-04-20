@@ -1,4 +1,4 @@
-package com.github.ryanddu.vo.req;
+package io.github.ryanddu.vo.req;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import io.swagger.v3.oas.annotations.media.Schema;

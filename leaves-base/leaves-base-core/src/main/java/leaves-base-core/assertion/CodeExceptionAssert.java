@@ -1,7 +1,7 @@
-package com.github.ryanddu.assertion;
+package io.github.ryanddu.assertion;
 
-import com.github.ryanddu.exception.CodeException;
-import com.github.ryanddu.exception.LeavesException;
+import io.github.ryanddu.exception.CodeException;
+import io.github.ryanddu.exception.LeavesException;
 
 /**
  * CodeException断言

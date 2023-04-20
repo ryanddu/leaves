@@ -142,19 +142,19 @@ public class MpGenerator {
         //自定义基础的Entity类，公共字段
         strategyConfig.setSuperEntityColumns("id", "gmt_create", "gmt_update", "create_by", "update_by");
         // 自定义继承的Entity类全称，带包名
-        strategyConfig.setSuperEntityClass("com.github.ryanddu.ext.UpdateSnowFlakeEntity");
+        strategyConfig.setSuperEntityClass("io.github.ryanddu.ext.UpdateSnowFlakeEntity");
         // 自定义继承的Mapper类全称，带包名
-        strategyConfig.setSuperMapperClass("com.github.ryanddu.ext.SuperMapper");
+        strategyConfig.setSuperMapperClass("io.github.ryanddu.ext.SuperMapper");
         // 自定义继承的Service类全称，带包名
-        strategyConfig.setSuperServiceClass("ccom.github.ryanddu.ext.SuperService");
+        strategyConfig.setSuperServiceClass("cio.github.ryanddu.ext.SuperService");
         // 自定义继承的ServiceImpl类全称，带包名
-        strategyConfig.setSuperServiceImplClass("com.github.ryanddu.ext.SuperServiceImpl");
+        strategyConfig.setSuperServiceImplClass("io.github.ryanddu.ext.SuperServiceImpl");
         //是否生成RestController风格
         strategyConfig.setRestControllerStyle(true);
         // 驼峰转连字符
         strategyConfig.setControllerMappingHyphenStyle(true);
         //自定义继承的Controller类全称，带包名
-        strategyConfig.setSuperControllerClass("com.github.ryanddu.ext.SuperController");
+        strategyConfig.setSuperControllerClass("io.github.ryanddu.ext.SuperController");
 
         return strategyConfig;
     }

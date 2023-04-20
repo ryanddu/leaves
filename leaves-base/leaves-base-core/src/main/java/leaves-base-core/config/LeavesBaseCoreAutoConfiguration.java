@@ -1,6 +1,6 @@
-package com.github.ryanddu.config;
+package io.github.ryanddu.config;
 
-import com.github.ryanddu.utils.SpringContextHolder;
+import io.github.ryanddu.utils.SpringContextHolder;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

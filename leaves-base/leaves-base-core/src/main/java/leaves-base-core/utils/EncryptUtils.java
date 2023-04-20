@@ -1,4 +1,4 @@
-package com.github.ryanddu.utils;
+package io.github.ryanddu.utils;
 
 import org.apache.commons.codec.DecoderException;
 import org.apache.commons.codec.binary.Base32;

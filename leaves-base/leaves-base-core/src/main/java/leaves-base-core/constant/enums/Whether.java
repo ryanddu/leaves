@@ -1,4 +1,4 @@
-package com.github.ryanddu.constant.enums;
+package io.github.ryanddu.constant.enums;
 
 /**
  * 全局通用是否状态枚举

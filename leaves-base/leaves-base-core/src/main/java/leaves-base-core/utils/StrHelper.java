@@ -1,4 +1,4 @@
-package com.github.ryanddu.utils;
+package io.github.ryanddu.utils;
 
 import cn.hutool.core.text.CharPool;
 import cn.hutool.core.util.ObjectUtil;
@@ -6,7 +6,7 @@ import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.core.enums.SqlLike;
 import com.baomidou.mybatisplus.core.toolkit.StringPool;
 import com.baomidou.mybatisplus.core.toolkit.sql.SqlUtils;
-import com.github.ryanddu.constant.StrPool;
+import io.github.ryanddu.constant.StrPool;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.stream.Stream;
@@ -22,7 +22,7 @@ public final class StrHelper {
     }
 
     public static String getOrDef(String val, String def) {
-        return com.github.ryanddu.utils.DefValueHelper.getOrDef(val, def);
+        return io.github.ryanddu.utils.DefValueHelper.getOrDef(val, def);
     }
 
     /**

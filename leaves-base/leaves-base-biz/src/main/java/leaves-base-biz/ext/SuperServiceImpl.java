@@ -1,10 +1,10 @@
-package com.github.ryanddu.ext;
+package io.github.ryanddu.ext;
 
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.github.ryanddu.utils.BeanUtils;
+import io.github.ryanddu.utils.BeanUtils;
 
 import java.io.Serializable;
 import java.util.Collection;

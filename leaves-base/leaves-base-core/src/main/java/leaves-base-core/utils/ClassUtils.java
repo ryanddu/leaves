@@ -1,4 +1,4 @@
-package com.github.ryanddu.utils;
+package io.github.ryanddu.utils;
 
 import cn.hutool.core.util.ReflectUtil;
 import com.baomidou.mybatisplus.core.exceptions.MybatisPlusException;

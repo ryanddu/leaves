@@ -1,4 +1,4 @@
-package com.github.ryanddu.ext;
+package io.github.ryanddu.ext;
 
 import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.TableField;

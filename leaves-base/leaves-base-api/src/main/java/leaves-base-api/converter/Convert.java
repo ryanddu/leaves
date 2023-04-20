@@ -1,6 +1,6 @@
-package com.github.ryanddu.converter;
+package io.github.ryanddu.converter;
 
-import com.github.ryanddu.utils.BeanUtils;
+import io.github.ryanddu.utils.BeanUtils;
 
 /**
  * 让Entity具有数据复制功能

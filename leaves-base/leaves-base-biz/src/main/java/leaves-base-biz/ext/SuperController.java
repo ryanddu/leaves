@@ -1,4 +1,4 @@
-package com.github.ryanddu.ext;
+package io.github.ryanddu.ext;
 
 /**
  * 通用controller

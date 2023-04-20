@@ -1,4 +1,4 @@
-package com.github.ryanddu.utils;
+package io.github.ryanddu.utils;
 
 import cn.hutool.json.JSONUtil;
 import com.alibaba.fastjson.JSON;

@@ -1,4 +1,4 @@
-package com.github.ryanddu.exception;
+package io.github.ryanddu.exception;
 
 /**
  * 异常基类
