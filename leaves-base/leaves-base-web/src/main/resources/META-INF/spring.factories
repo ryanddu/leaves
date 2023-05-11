@@ -1,3 +1,3 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-io.github.ryanddu.config.LeavesBaseWebAutoConfiguration,\
-io.github.ryanddu.config.SerializeAndConverterConfig
+io.github.ryanddu.leaves.base.web.config.LeavesBaseWebAutoConfiguration,\
+io.github.ryanddu.leaves.base.web.config.SerializeAndConverterConfig

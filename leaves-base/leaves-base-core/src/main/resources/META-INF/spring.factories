@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-io.github.ryanddu.config.LeavesBaseCoreAutoConfiguration
+io.github.ryanddu.leaves.base.core.config.LeavesBaseCoreAutoConfiguration

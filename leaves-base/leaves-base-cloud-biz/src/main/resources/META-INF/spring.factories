@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-io.github.ryanddu.config.LeavesBaseCloudBizAutoConfiguration
+io.github.ryanddu.leaves.base.cloud.biz.config.LeavesBaseCloudBizAutoConfiguration

@@ -1,4 +1,4 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-io.github.ryanddu.config.LeavesBaseBizAutoConfiguration,\
-io.github.ryanddu.mybatis.MybatisPlusConfig,\
-io.github.ryanddu.transaction.TransactionManagerConfig
+io.github.ryanddu.leaves.base.biz.config.LeavesBaseBizAutoConfiguration,\
+io.github.ryanddu.leaves.base.biz.mybatis.MybatisPlusConfig,\
+io.github.ryanddu.leaves.base.biz.transaction.TransactionManagerConfig
