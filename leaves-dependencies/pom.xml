@@ -20,10 +20,14 @@
 	</developers>
 
 	<scm>
+		<!--可以在浏览器中访问的scm地址-->
 		<url>https://github.com/ryanddu/leaves</url>
-		<connection>https://github.com/ryanddu/leaves.git</connection>
-		<developerConnection>https://github.com/ryanddu</developerConnection>
+		<!--可读的SCM地址-->
+		<connection>scm:git:https://github.com/ryanddu/leaves</connection>
+		<!--可写的SCM地址-->
+		<developerConnection>scm:git:https://github.com/ryanddu/leaves</developerConnection>
 	</scm>
+
 
 	<licenses>
 		<license>
@@ -338,6 +342,39 @@
 					</plugin>
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-javadoc-plugin</artifactId>
+						<configuration>
+							<additionalJOption>-J-Dfile.encoding=UTF-8</additionalJOption>
+							<doclint>none</doclint>
+							<tags>
+								<tag>
+									<name>date</name>
+								</tag>
+							</tags>
+						</configuration>
+						<executions>
+							<execution>
+								<goals>
+									<goal>jar</goal>
+								</goals>
+								<id>attach-javadocs</id>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-source-plugin</artifactId>
+						<executions>
+							<execution>
+								<goals>
+									<goal>jar-no-fork</goal>
+								</goals>
+								<id>attach-sources</id>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-release-plugin</artifactId>
 						<version>${maven-release-plugin.version}</version>
 						<configuration>
@@ -354,6 +391,7 @@
 						<configuration>
 							<nexusUrl>https://oss.sonatype.org/</nexusUrl>
 							<serverId>ossrh</serverId>
+							<stagingProgressTimeoutMinutes>20</stagingProgressTimeoutMinutes>
 						</configuration>
 						<extensions>true</extensions>
 					</plugin>
