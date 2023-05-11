@@ -1,6 +1,6 @@
-package io.github.ryanddu.vo.res;
+package io.github.ryanddu.leaves.base.api.vo.res;
 
-import io.github.ryanddu.constant.enums.CommonCodeEnum;
+import io.github.ryanddu.leaves.base.core.constant.enums.CommonCodeEnum;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;

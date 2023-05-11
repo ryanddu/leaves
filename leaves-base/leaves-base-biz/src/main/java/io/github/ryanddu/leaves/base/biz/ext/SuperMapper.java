@@ -1,4 +1,4 @@
-package io.github.ryanddu.ext;
+package io.github.ryanddu.leaves.base.biz.ext;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 

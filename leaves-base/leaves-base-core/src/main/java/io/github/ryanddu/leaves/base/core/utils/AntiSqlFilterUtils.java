@@ -1,4 +1,4 @@
-package io.github.ryanddu.utils;
+package io.github.ryanddu.leaves.base.core.utils;
 
 import cn.hutool.core.util.ArrayUtil;
 

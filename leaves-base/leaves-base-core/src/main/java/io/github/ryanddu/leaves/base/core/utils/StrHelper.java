@@ -1,4 +1,4 @@
-package io.github.ryanddu.utils;
+package io.github.ryanddu.leaves.base.core.utils;
 
 import cn.hutool.core.text.CharPool;
 import cn.hutool.core.util.ObjectUtil;
@@ -24,7 +24,7 @@ public final class StrHelper {
 	}
 
 	public static String getOrDef(String val, String def) {
-		return io.github.ryanddu.utils.DefValueHelper.getOrDef(val, def);
+		return DefValueHelper.getOrDef(val, def);
 	}
 
 	/**

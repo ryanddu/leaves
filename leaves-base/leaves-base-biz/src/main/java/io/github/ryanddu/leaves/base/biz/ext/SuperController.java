@@ -1,4 +1,4 @@
-package io.github.ryanddu.ext;
+package io.github.ryanddu.leaves.base.biz.ext;
 
 /**
  * 通用controller <pre>
