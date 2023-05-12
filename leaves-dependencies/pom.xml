@@ -186,32 +186,32 @@
 			<dependency>
 				<groupId>io.github.ryanddu</groupId>
 				<artifactId>leaves-base-core</artifactId>
-				<version>${revision}</version>
+				<version>0.0.1-SNAPSHOT</version>
 			</dependency>
 			<dependency>
 				<groupId>io.github.ryanddu</groupId>
 				<artifactId>leaves-base-api</artifactId>
-				<version>${revision}</version>
+				<version>0.0.1-SNAPSHOT</version>
 			</dependency>
 			<dependency>
 				<groupId>io.github.ryanddu</groupId>
 				<artifactId>leaves-base-biz</artifactId>
-				<version>${revision}</version>
+				<version>0.0.1-SNAPSHOT</version>
 			</dependency>
 			<dependency>
 				<groupId>io.github.ryanddu</groupId>
 				<artifactId>leaves-base-web</artifactId>
-				<version>${revision}</version>
+				<version>0.0.1-SNAPSHOT</version>
 			</dependency>
 			<dependency>
 				<groupId>io.github.ryanddu</groupId>
 				<artifactId>leaves-base-cloud-api</artifactId>
-				<version>${revision}</version>
+				<version>0.0.1-SNAPSHOT</version>
 			</dependency>
 			<dependency>
 				<groupId>io.github.ryanddu</groupId>
 				<artifactId>leaves-base-cloud-biz</artifactId>
-				<version>${revision}</version>
+				<version>0.0.1-SNAPSHOT</version>
 			</dependency>
 			<!--endregion ============= 结束定义leaves 自身模块版本 =========== -->
 		</dependencies>
