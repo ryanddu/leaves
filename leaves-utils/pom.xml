@@ -9,7 +9,7 @@
 	<artifactId>leaves-utils</artifactId>
 	<packaging>pom</packaging>
 	<modules>
-		<module>leaves-utils-codegen</module>
+		<module>codegen</module>
 	</modules>
 
 </project>

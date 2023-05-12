@@ -207,22 +207,12 @@
 			</dependency>
 			<dependency>
 				<groupId>io.github.ryanddu</groupId>
-				<artifactId>leaves-base-cloud-gateway</artifactId>
-				<version>${revision}</version>
-			</dependency>
-			<dependency>
-				<groupId>io.github.ryanddu</groupId>
 				<artifactId>leaves-base-cloud-api</artifactId>
 				<version>${revision}</version>
 			</dependency>
 			<dependency>
 				<groupId>io.github.ryanddu</groupId>
 				<artifactId>leaves-base-cloud-biz</artifactId>
-				<version>${revision}</version>
-			</dependency>
-			<dependency>
-				<groupId>io.github.ryanddu</groupId>
-				<artifactId>leaves-utils-codegen</artifactId>
 				<version>${revision}</version>
 			</dependency>
 			<!--endregion ============= 结束定义leaves 自身模块版本 =========== -->

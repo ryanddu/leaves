@@ -7,7 +7,7 @@
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>leaves-utils-codegen</artifactId>
+	<artifactId>codegen</artifactId>
 	<packaging>jar</packaging>
 	<dependencies>
 		<!--mybatis-plus相关依赖-->
