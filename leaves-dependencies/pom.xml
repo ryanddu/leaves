@@ -363,7 +363,7 @@
 						<artifactId>nexus-staging-maven-plugin</artifactId>
 						<version>${nexus-staging-maven-plugin.version}</version>
 						<configuration>
-							<nexusUrl>https://oss.sonatype.org/</nexusUrl>
+							<nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
 							<serverId>ossrh</serverId>
 							<stagingProgressTimeoutMinutes>20</stagingProgressTimeoutMinutes>
 						</configuration>
@@ -373,11 +373,11 @@
 			</build>
 			<distributionManagement>
 				<repository>
-					<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+					<url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
 					<id>ossrh</id>
 				</repository>
 				<snapshotRepository>
-					<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+					<url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
 					<id>ossrh</id>
 				</snapshotRepository>
 			</distributionManagement>
