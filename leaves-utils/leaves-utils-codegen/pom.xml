@@ -2,7 +2,7 @@
 	<parent>
 		<artifactId>leaves-utils</artifactId>
 		<groupId>io.github.ryanddu</groupId>
-		<version>0.0.1</version>
+		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 
@@ -34,8 +34,4 @@
 			<artifactId>hutool-core</artifactId>
 		</dependency>
 	</dependencies>
-
-  <scm>
-    <tag>leaves-0.0.1</tag>
-  </scm>
 </project>
