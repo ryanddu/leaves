@@ -2,7 +2,7 @@
 	<parent>
 		<artifactId>leaves-utils</artifactId>
 		<groupId>io.github.ryanddu</groupId>
-		<version>0.0.2-SNAPSHOT</version>
+		<version>${revision}</version>
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 
