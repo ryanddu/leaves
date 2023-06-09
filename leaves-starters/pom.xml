@@ -7,5 +7,20 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>leaves-starters</artifactId>
     <packaging>pom</packaging>
-
+	<profiles>
+		<profile>
+			<id>ossrh</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.sonatype.plugins</groupId>
+						<artifactId>nexus-staging-maven-plugin</artifactId>
+						<configuration>
+							<skipStaging>false</skipStaging>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 </project>
